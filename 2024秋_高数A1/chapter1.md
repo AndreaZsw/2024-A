@@ -982,33 +982,62 @@ vlook-query: ws=off
 > > **例1**
 > > 
 > > $\displaystyle \lim_{x\rightarrow 0}\frac{\tan(x)}{x}$ (P48: 例1)
+> > 
+> > 解：$\displaystyle \lim_{x \rightarrow 0} \frac{\tan (x)}{x}= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \cdot \frac{1}{\cos (x)} \right) = \left( \lim_{x \rightarrow 0} \frac{\sin (x)}{x} \right) \cdot \left( \lim_{x \rightarrow 0} \frac{1}{\cos (x)} \right)=1$.
 >
 > > **例2**
 > > 
 > > $\displaystyle \lim_{x\rightarrow 0}\frac{1-\cos(x)}{x^2}$ (P48: 例2)
+> >
+> > 解：$\displaystyle \lim_{x \rightarrow 0} \frac{1 - \cos (x)}{x^{2}} = \lim_{x \rightarrow 0} \left( \frac{\sin^{2}(x)}{x^{2}} \cdot \frac{1}{1 + \cos (x)} \right)= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos (x)} = \frac{1}{2}$.
 >
 > ---
 >
 > > **例3**
 > >
 > > $\displaystyle \lim_{x\rightarrow 0}\frac{\arcsin(x)}{x}$ (P48: 例3)
+> >
+> >解：$t = \arcsin (x)$，则 $x = \sin t$，当 $x \to 0$ 时，有 $t \to 0$.  于是由复合函数的极限运算法则得：$\displaystyle \lim_{x \to 0} \frac{\arcsin (x)}{x} = \lim_{t \to 0} \frac{t}{\sin (t)} = 1$.
 >
 > > **例4**
 > > 
 > > $\displaystyle \lim_{x\rightarrow \infty}\left( 1-\frac{1}{x}\right)^{x}$ (P51: 例4)
+> >
+> >解：令 $t = -x$，则当 $x \to \infty$ 时，$t \to -\infty$.  于是
+$\displaystyle \lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \left( 1 + \frac{1}{t} \right)^{-t} = \lim_{t \to -\infty} \frac{1}{\left( 1 + \frac{1}{t} \right)^{t}} = \frac{1}{e}$.
 > ---
 >
 > > **例5**
 > > 
 > > $\displaystyle \lim_{x\rightarrow 0}\frac{\tan (2x)}{\sin (5x)}$ (P55: 例3)
+> >
+> >解：当 $ x \rightarrow 0 $ 时，$\tan (2)x \sim 2x$，$\sin (5x) \sim 5x$，所以  $\displaystyle \lim_{x \rightarrow 0} \frac{\tan (2x)}{\sin (5x)} = \lim_{x \rightarrow 0} \frac{2x}{5x} = \frac{2}{5}$.
 >
 > > **例6**
 > > 
 > > $\displaystyle \lim_{n\rightarrow \infty}\frac{\sqrt{n^2 + a^2}}{n}$ (习题1-2: 5(3))
 > > 
 > > - 方法一: 用定义证明.
+> > <br>解：当 $ a = 0 $ 时，所给数列为常数列，显然有此结论。以下设 $a ≠ 0$.
+由不等式变形：
+$\displaystyle \begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| &= \frac{\sqrt{n^2 + a^2} - n}{n} = \frac{a^2}{n(\sqrt{n^2 + a^2} + n)} < \frac{a^2}{2n^2}\end{aligned}$
+> > <br>要使 $\displaystyle \left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| < \varepsilon $，只需满足：$\displaystyle \frac{a^2}{2n^2} < \varepsilon \quad \Rightarrow \quad n > \frac{|a|}{\sqrt{2\varepsilon}}$.
+> > <br>取 $ \displaystyle \ N = \left\lceil \frac{|a|}{\sqrt{2\varepsilon}} \right\rceil $，则当 $ n > N $ 时，有：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^2 + a^2}}{n} = 1$
+> >
 > > - 方法二: 用极限运算和复合函数的极限证明.
+> > <br>解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
+> > <br>设两个基本函数：内层函数：$\displaystyle \ f(n) = 1 + \frac{a^{2}}{n^{2}}$ ，外层函数：$g(x) = \sqrt{x}$ 
+> >  <br>原极限可表示为复合函数：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\lim_{n \to \infty} \left(1 + \frac{a^{2}}{n^{2}}\right)}$
+> > <br>利用基本极限性质：$\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = 0$
+因此：$\displaystyle\lim_{n \to \infty} f(n) = 1 + 0 = 1$
+> > <br>因外函数 $ g(x) = \sqrt{x} $ 在 $ x = 1 $ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
+> > <br>代入内部极限结果：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = g(1) = \sqrt{1} = 1$
+> >
 > > - 方法三: 用极限运算证明
+> > <br>解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
+> > <br>应用根式的极限法则：根据极限的根式法则,若 $\displaystyle\lim_{n \to \infty} f(n)$ 存在且非负，则 $\displaystyle\lim_{n \to \infty} \sqrt{f(n)} = \sqrt{\lim_{n \to \infty} f(n)}$，将极限移入根号内：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = \sqrt{ \lim_{n \to \infty} \left( 1 + \frac{a^2}{n^2} \right) }$.
+> > <br>计算内部极限：常数项极限为$\displaystyle\lim_{n \to \infty} 1 = 1$.
+含$n$的项极限为$\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = a^2 \cdot 0 \cdot 0 = 0$.根据加法法则，极限为$\displaystyle\lim_{n \to \infty} \left( 1 + \frac{a^2}{n^2} \right) = 1 + 0 = 1$.
 
 # 连续函数
 
