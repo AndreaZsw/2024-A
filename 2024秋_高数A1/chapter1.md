@@ -1020,7 +1020,14 @@ $\displaystyle \lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t 
 > > - 方法一: 用定义证明.
 > > <br>解：当 $ a = 0 $ 时，所给数列为常数列，显然有此结论。以下设 $a ≠ 0$.
 由不等式变形：
-$\displaystyle \begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| &= \frac{\sqrt{n^2 + a^2} - n}{n} = \frac{a^2}{n(\sqrt{n^2 + a^2} + n)} < \frac{a^2}{2n^2}\end{aligned}$
+$$
+\begin{aligned}
+\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right|
+&= \frac{\sqrt{n^2 + a^2} - n}{n} \\
+&= \frac{a^2}{n(\sqrt{n^2 + a^2} + n)} \\
+&< \frac{a^2}{2n^2}
+\end{aligned}
+$$
 > > <br>要使 $\displaystyle \left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| < \varepsilon $，只需满足：$\displaystyle \frac{a^2}{2n^2} < \varepsilon \quad \Rightarrow \quad n > \frac{|a|}{\sqrt{2\varepsilon}}$.
 > > <br>取 $ \displaystyle \ N = \left\lceil \frac{|a|}{\sqrt{2\varepsilon}} \right\rceil $，则当 $ n > N $ 时，有：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^2 + a^2}}{n} = 1$
 > >
@@ -1074,13 +1081,13 @@ $\displaystyle \begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| &= \
 > > 
 > >  $f(x)$ 在 $(-\infty, +\infty)$ 上连续.
 > > 
-> > ![](media/img/123x.jpg)
+> > ![](media/img/chap1_5.1.1.png)
 > 
 > > **例2: $\displaystyle f(x) = \frac{1}{|x|}$**
 > > 
 > >  $f(x)$ 在 $(-\infty,0)\bigcup (0, +\infty)$ 上连续, 但是在 0 点处不连续.
 > > 
-> >![](../../1d1cf0e1c2a300f25af267b98234b0a.png)
+> >![](media/img/chap1_5.1.2.png)
 > 
 
 > [!caution]
@@ -1104,7 +1111,7 @@ $\displaystyle \begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| &= \
 > >
 > > $f(x)$ 在 $x=0$ 点处不连续. 造成不连续的原因跟*`例3`*一样也是 $f(0)$ 没有定义. 不幸的是,  $f(x)$ 在 $x=0$ 处无限震荡, 没有极限, 所以这个函数没法像*`例3`*一样简单的补上一个点就成为连续函数.
 > >
-> > [补充函数图像]
+> > ![](media/img/chap1_5.1.3.png)
 >
 
 > [!caution]
@@ -1188,11 +1195,17 @@ $\displaystyle \begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| &= \
 >
 > > **例1: $\displaystyle f(x) = \frac{1}{x}$ **
 > >
-> > [待补充]
+> > 在闭区间$[-1,1]$上, $f(x)$ 在 $x=0$ 处不连续, 因为 $f(0)$ 没有定义. 因此, $f(x)$ 在 $[-1,1]$ 上的连续性是不成立的. 违反维尔斯特拉斯极值定理，$f(x)$ 在闭区间$[-1,1]$上无界，当$x \to 0$ 时，$\displaystyle \lim_{x \to 0} |f(x)| \to +\infty$,不存在最大值和最小值.
+
 > 
 > > **例2: 符号函数**
 > >
-> > [待补充]
+> > $$\mathrm{sgn}(x) = \begin{cases}
+> > 1,  & \text{if $x>0$}, \\
+> > 0, & \text{if $x=0$}, \\
+> > -1, & \text{if $x<0$}.
+> > \end{cases}$$
+> >符号函数在闭区间$[-1, 1]$上不连续，因为在$x=0$处，符号函数的左右极限不相等。
 > 
 
 > [!important]
@@ -1212,11 +1225,14 @@ $\displaystyle \begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| &= \
 >
 > ---
 >
-> > **[P68 例1] **
+> > **例1：证明方程 $x^{3} - 4x^{2} + 1 = 0$ 在区间 $(0,\,1)$ 内至少有一个根**
 > >
-> > [待补充]
+> > 证明：函数 $f ( x ) = x ^ { 3 } - 4 x ^ { 2 } + 1$ 在闭区间 $[0，1]$上连续，又$f ( 0 ) = 1 >0$，$f ( 1 ) = - 2< 0$.
+> > 根据介值定理，在 $(0，1)$内至少有一点 $ξ$，使得 $f ( η ) = 0$.
+即 $ ξ ^{3 }- 4 ξ ^{ 2 } + 1 = 0$ $\quad$ $(0<ξ<1)$.
+这等式说明方程 $x ^ { 3 } - 4 x ^ { 2 } + 1 = 0$ 在区间(0，1)内至少有一个根是 $ξ$． 
 >
-> > **[习题1-10: 1] **
+> > **习题1:  设函数$f ( x )$ 在闭区间 $[ a，b ]$ 上连续，且满足$a ≤ f ( x ) ≤ b$ 对所有$x \in [ a,b ]$ 成立. 证明：存在 $c \in [ a,b ]$，使得$f ( c ) = c$**
 > >
 > > 借助**介值定理**可以很容易证明上述定理, 其中的 $c$ 也称为函数 $f(x)$ 的不动点.
 >

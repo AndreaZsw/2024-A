@@ -79,14 +79,35 @@ vlook-query: ws=off
 > 
 > ---
 > 
-> > ==例1(P77例1)==
+> > ==例1==
 > > 
-> > 求 $f(x) = C$ 在 $x_0=1$ 处的导数.
+> > **求 $f(x) = C$ 在 $x_0=1$ 处的导数.**
+> >
+> > 解：根据导数的定义：$$
+f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$$
+代入 \( f(x) = C \) 和 \( x_0 = 1 \)：
+$$
+f'(1) = \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x}= \lim_{\Delta x \to 0} \frac{C - C}{\Delta x} = \lim_{\Delta x \to 0} \frac{0}{\Delta x} = \lim_{\Delta x \to 0} 0 = 0$$
+答案为：\( f'(1) = {0} \)
 > 
 > > ==例2==
 > > 
-> > 求 $f(x) = x^2$ 在 $x_0=2$ 处的导数.
+> > **求 $f(x) = x^2$ 在 $x_0=2$ 处的导数.**
 > > 
+> >解：根据导数的定义：
+$$
+f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+$$
+代入 \( f(x) = x^2 \) 和 \( x_0 = 2 \)：
+$$
+f'(2) = \lim_{\Delta x \to 0} \frac{(2 + \Delta x)^2 - 2^2}{\Delta x} = \lim_{\Delta x \to 0} \frac{4 + 4\Delta x + (\Delta x)^2 - 4}{\Delta x} 
+$$
+化简分子并求极限：
+$$
+f'(2) = \lim_{\Delta x \to 0} \frac{4\Delta x + (\Delta x)^2}{\Delta x} = \lim_{\Delta x \to 0} \frac{\Delta x(4 + \Delta x)}{\Delta x} = \lim_{\Delta x \to 0} (4 + \Delta x) = 4 + 0 = 4
+$$
+答案为\( f'(2) = {4} \)
+
 
 ## 导函数
 
@@ -106,29 +127,152 @@ vlook-query: ws=off
 > 
 > > ==例3==
 > > 
-> > 求 $f(x) = x^2$ 的导函数.
+> > **求 $f(x) = x^2$ 的导函数.**
 > > 
+> > 解：函数 \( f(x) = x^2 \) 的导数推导如下：\[f'(x) = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x} = \lim_{\Delta x\to 0} \frac{(x+\Delta x)^2 - x^2}{\Delta x}\]
+> > \[ =\lim_{\Delta x \to 0} \frac{x^2 + 2x\Delta x + \Delta x^2- x^2}{\Delta x} =\lim_{\Delta x \to 0} \frac{2x\Delta x + \Delta x^2}{\Delta x}\]
+> >此时极限表达式变为：
+   \[f'(x) = \lim_{\Delta x \to 0} (2x + \Delta x)= 2x\]
 > 
 > > ==例4(P78例4)==
 > > 
+> > **求函数 \( f(x) = \cos x \) 的导数.**
+> 
 > > **方法一**
+> > 解：由导数的定义：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{\cos(x + \Delta x) - \cos x}{\Delta x}\]
+> > 利用三角恒等式：\[\cos A - \cos B = -2 \sin\left( \frac{A + B}{2} \right) \sin\left( \frac{A - B}{2} \right)\]
+> > 得到：\[\cos(x + \Delta x) - \cos x = -2 \sin\left( x + \frac{\Delta x}{2} \right) \sin\left( \frac{\Delta x}{2} \right)\]
+   代入导数定义：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{-2 \sin\left( x + \frac{\Delta x}{2} \right) \sin\left( \frac{\Delta x}{2} \right)}{\Delta x}\]
+> >拆分极限：
+   \[f'(x) = -2 \lim_{\Delta x \to 0} \sin\left( x + \frac{\Delta x}{2} \right) \cdot \lim_{\Delta x \to 0} \frac{\sin\left( \frac{\Delta x}{2} \right)}{\Delta x}\]
+> > - 第一个极限：
+     \[\lim_{\Delta x \to 0} \sin\left( x + \frac{\Delta x}{2} \right) = \sin x\]
+> > - 第二个极限（令 \( t = \frac{\Delta x}{2} \)）：
+     \[\lim_{\Delta x \to 0} \frac{\sin\left( \frac{\Delta x}{2} \right)}{\Delta x} = \lim_{t \to 0} \frac{\sin t}{2t} = \frac{1}{2} \cdot 1 = \frac{1}{2}\]
+> >合并结果：
+   \[f'(x) = (\cos x)' =-2 \cdot \sin x \cdot \frac{1}{2} = -\sin x\]
+>
+>
 > > **方法二**
+> >解：
+> >由导数的定义：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{\cos(x + \Delta x) - \cos x}{\Delta x}\]
+   展开 \( \cos(x + \Delta x) \)并带入：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{\cos x \cos \Delta x - \sin x \sin \Delta x - \cos x}{\Delta x}\]
+> >拆分分子并化简：
+   \[f'(x) = \lim_{\Delta x \to 0} \left[ \cos x \cdot \frac{\cos \Delta x - 1}{\Delta x} - \sin x \cdot \frac{\sin \Delta x}{\Delta x} \right]\]
+> > 计算关键极限：
+> > - 已知极限：  
+     \[\lim_{\Delta x \to 0} \frac{\sin \Delta x}{\Delta x} = 1\]
+> >
+> >- 计算 \(\frac{\cos \Delta x - 1}{\Delta x}\)：
+利用三角恒等式 \( \cos \Delta x - 1 = -2\sin^2\left(\frac{\Delta x}{2}\right) \)：
+   \[\frac{\cos \Delta x - 1}{\Delta x} = -2 \cdot \frac{\sin^2\left(\frac{\Delta x}{2}\right)}{\Delta x} = -\frac{\sin\left(\frac{\Delta x}{2}\right)}{\frac{\Delta x}{2}} \cdot \sin\left(\frac{\Delta x}{2}\right)\]
+   令 \( t = \frac{\Delta x}{2} \)，当 \( \Delta x \to 0 \) 时 \( t \to 0 \)，则：
+   \[\lim_{\Delta x \to 0} \frac{\cos \Delta x - 1}{\Delta x} = -\lim_{t \to 0} \left( \frac{\sin t}{t} \cdot \sin t \right) = -1 \cdot 0 = 0\]
+> >合并结果：
+   \[f'(x) = (\cos x)' =-2 \cdot \sin x \cdot \frac{1}{2} = -\sin x\]     
+> 
+> >用类似的方法可以求得 $\sin x$ 的导数
+> >即：$$(\sin x)' = \cos x$$
+
+
 
 > [!note]
 >
 > ---
 >
 > > ==例5(P77例2)== 
-> 
+>>
+> >**求正整数次幂函数 \( f(x) = x^m \) 的导数.**
+> >
+> >解：当 \( m = 1 \) 时：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{(x+\Delta x) - x}{\Delta x} = \lim_{\Delta x \to 0} \frac{\Delta x}{\Delta x} = 1\]
+> >当 \( m > 1 \) 时：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{(x+\Delta x)^m - x^m}{\Delta x}\]
+   展开多项式：
+   \[(x+\Delta x)^m = x^m + m x^{m-1} \Delta x + \frac{m(m-1)}{2} x^{m-2} (\Delta x)^2 + \cdots + (\Delta x)^m\]
+   代入后化简：
+   \[
+   f'(x) = \lim_{\Delta x \to 0} \left[ m x^{m-1} + \frac{m(m-1)}{2} x^{m-2} \Delta x + \cdots + (\Delta x)^{m-1} \right] = m x^{m-1}
+   \]
+>>最终结果为：  
+\[(x^m)' = 
+\begin{cases} 
+1, & m = 1, \\
+m x^{m-1}, & m > 1.
+\end{cases}\]
+>
+>
 >> ==例6(P77例3)== 
+>>
+>>**求函数 \( f(x) = x^\alpha \) 的导数.  (\(\alpha\in\mathbb{R} \))**
+>>
+>>解：由导数的定义：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{(x+\Delta x)^\alpha - x^\alpha}{\Delta x}\]
+>>
+>> 提取公共因子：
+   \[\frac{(x+\Delta x)^\alpha - x^\alpha}{\Delta x} = x^{\alpha-1} \cdot \frac{\left( 1 + \frac{\Delta x}{x} \right)^\alpha - 1}{\frac{\Delta x}{x}}\]
+>>
+>>变量代换：  
+   令 \( t = \frac{\Delta x}{x} \)，则当 \( \Delta x \to 0 \) 时 \( t \to 0 \)，极限转化为：\[
+   f'(x) = x^{\alpha-1} \cdot \lim_{t \to 0} \frac{(1 + t)^\alpha - 1}{t}\]
+>>  
+>>利用幂函数展开式 \( (1 + t)^\alpha \approx 1 + \alpha t \)(当 \( t \to 0 \))：
+   \[\lim_{t \to 0} \frac{(1 + \alpha t) - 1}{t} = \alpha\]
+>>
+>>结果为：
+   \[f'(x) = \alpha x^{\alpha-1}\]
+
+
 
 > [!note]
 > 
 > ---
 > 
 > > ==例7(P78例5)== 
-> 
+> >
+>>**给定函数 \( f(x) = q^x \)，其中底数 \( q \) 是大于 0 且不等于 1 的常数，求导函数 \( f'(x) \)**
+>>
+>>解：由导数定义：
+\[f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}\]
+>>
+>>代入函数 \( f(x) = q^x \) 得：
+>>\[f'(x) = \lim_{\Delta x \to 0} \frac{q^{x + \Delta x} - q^x}{\Delta x}
+= \lim_{\Delta x \to 0} \frac{q^x \cdot q^{\Delta x} - q^x}{\Delta x}= q^x \cdot \lim_{\Delta x \to 0} \frac{q^{\Delta x} - 1}{\Delta x}\]
+>>
+>>根据极限性质，有：
+>>\[\lim_{\Delta x \to 0} \frac{q^{\Delta x} - 1}{\Delta x} = \ln q\]
+>>因此，$f'(x) = q^x \cdot \ln q$
+>>这就是指数函数的导数公式。当 $ u = e $ 时，因 $ \ln e = 1 $，故有：$(e^x)' = e^x$
+>
+>---
+>
+>
 > > ==例8(P79例6)== 
+>>
+>>**求对数函数 \( f(x) = \log_u x \) 的导数, 其中$u$是大于0且不等于1的常数.**
+>>
+>>解：由导数的定义：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{\log_u (x + \Delta x) - \log_u x}{\Delta x}\]
+>>
+>>应用对数性质：
+   利用换底公式 \( \log_u a = \frac{\ln a}{\ln u} \)，将分子转换为自然对数：
+   \[f'(x) = \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln x}{\ln u}}{\Delta x} = \frac{1}{\ln u} \cdot \lim_{\Delta x \to 0} \frac{\ln\left(1 + \frac{\Delta x}{x}\right)}{\Delta x}\]
+>>
+>>变量代换：  
+   令 \( h = \frac{\Delta x}{x} \)，当 \( \Delta x \to 0 \) 时 \( h \to 0 \)，则：
+   \[f'(x) = \frac{1}{\ln u} \cdot \lim_{h \to 0} \frac{\ln(1 + h)}{x \cdot h} = \frac{1}{x \ln u} \cdot \lim_{h \to 0} \frac{\ln(1 + h)}{h}\]
+>>
+>>关键极限：  
+$$\lim_{h \to 0} \frac{\ln(1 + h)}{h} = \lim_{h \to 0} \ln\ (1 + h)^{\frac{1}{h}}  = \ln\left( \lim_{h \to 0} (1 + h)^{\frac{1}{h}} \right) = \ln e = 1$$
+>>
+>>结果为：
+   \[f'(x) = \frac{1}{x \ln u} \cdot 1 = \frac{1}{x \ln u}\]
+
+
 
 > [!caution]
 > 
@@ -143,15 +287,66 @@ vlook-query: ws=off
 > 
 > > ==反例1==
 > > 
-> > $f(x) = |x|$
+> > **$f(x) = |x|$**
+>>
+>> - 连续：绝对值函数在 \( x = 0 \) 处是连续的，因为：
+$\displaystyle \lim_{x \to 0^-} |x| = 0, \quad \lim_{x \to 0^+} |x| = 0, \quad f(0) = 0.$
+>>
+>> - 可导性：\( f(x) = |x| \) 在 \( x=0 \) 处的导数
+>>由导数的定义：
+>>$f'(0) = \displaystyle \lim_{\Delta x \to 0} \frac{f(0+\Delta x)-f(0)}{\Delta x} = \lim_{\Delta x \to 0} \frac{|\Delta x| - 0}{\Delta x} = \lim_{\Delta x \to 0} \frac{|\Delta x|}{\Delta x}$
+>>当 \( \Delta x < 0 \) 时：  
+   \[\frac{|\Delta x|}{\Delta x} = \frac{-\Delta x}{\Delta x} = -1 \quad \Rightarrow \quad \lim_{\Delta x \to 0^-} \frac{|\Delta x|}{\Delta x} = -1\]
+>>当 \( \Delta x > 0 \) 时：  
+   \[\frac{|\Delta x|}{\Delta x} = \frac{\Delta x}{\Delta x} = 1 \quad \Rightarrow \quad \lim_{\Delta x \to 0^+} \frac{|\Delta x|}{\Delta x} = 1\]
+>>由于左极限 (\(-1\)) 与右极限 (\(1\)) 不相等，故极限: $\displaystyle \lim_{\Delta x \to 0} \frac{|\Delta x|}{\Delta x}$
+**不存在**。因此，函数 \( f(x) = |x| \) 在 \( x=0 \) 处**不可导**。
+>>
+>> **故连续不一定可导**
+>
+>>
 > 
 > > ==反例2==
 > > 
-> > $f(x) = x^{1/3}$
+> > **$f(x) = x^{\frac{1}{3}}$**
+>> - 连续性：立方根函数在所有实数点（包括 \( x = 0 \)）都是连续的，因为：$\displaystyle \lim_{x \to 0} x^{\frac{1}{3}} = 0 = f(0).$
+>> - 可导性  
+计算$f(x)$的导数：$f'(x) = \frac{1}{3} x^{-\frac{2}{3}} \quad (x \neq 0).$
+当 \( x \to 0 \) 时，\( f'(x) \to \infty \)，即导数在 \( x = 0 \) 处**不存在**（无穷大导数）。
+>>
+>>**故连续不一定可导**
+>>
+>>
 
 > [!caution]
 > 
 > ==单侧导数==
+>
+>根据函数 \( f(x) \) 在点 \( x_0 \) 处的导数 \( f'(x_0) \) 的定义，导数  
+$$
+f'(x_0) = \lim_{\Delta x  \to 0} \frac{f(x_0 + \Delta x ) - f(x_0)}{\Delta x }
+$$  
+是一个极限，而极限存在的充分必要条件是左、右极限都存在且相等。因此，\( f'(x_0) \) 存在（即 \( f(x) \) 在点 \( x_0 \) 处可导）的充分必要条件是左、右极限  
+$$
+\lim_{\Delta x  \to 0^-} \frac{f(x_0 + \Delta x ) - f(x_0)}{\Delta x } \quad \text{及} \quad \lim_{\Delta x \to 0^+} \frac{f(x_0 + \Delta x ) - f(x_0)}{\Delta x }
+$$  
+都存在且相等。
+>
+> - **左导数与右导数的定义**
+这两个极限分别称为函数 \( f(x) \) 在点 \( x_0 \) 处的**左导数**和**右导数**，记作 \( f'_-(x_0) \) 及 \( f'_+(x_0) \)，即  
+$$
+f'_-(x_0) = \lim_{\Delta x  \to 0^-} \frac{f(x_0 + \Delta x ) - f(x_0)}{\Delta x },
+$$  
+$$
+f'_+(x_0) = \lim_{\Delta x  \to 0^+} \frac{f(x_0 + \Delta x ) - f(x_0)}{\Delta x }.
+$$
+>
+> - **可导的充要条件**：  
+函数 \( f(x) \) 在点 \( x_0 \) 处可导的充分必要条件是左导数 \( f'_-(x_0) \) 和右导数 \( f'_+(x_0) \) 都存在且相等。
+>
+> - **左导数和右导数统称为单侧导数**。  
+> - **闭区间上的可导性**：  
+  如果函数 $ f(x) $  在开区间 \( (a, b) \) 内可导, 左端点右导数 \( f'_+(a) \) 和右端点左导数 \( f'_-(b) \) 均存在, 则称 \( f(x) \) 在闭区间 \( [a, b] \) 上**可导**
 
 
 # 导数的计算
@@ -293,15 +488,71 @@ vlook-query: ws=off
 
 > [!note]
 > 
-> ==P86 例1== 
+>>==P86 例1== 
+>>
+>>**求函数 \( y = 3x^3 - 4x^2 + 5x - 9 \) 的导数 \( y' \).**
+>>
+>>$\begin{aligned}
+>>解：y' &= (3x^3 - 4x^2 + 5x - 9)' \\
+&= (3x^3)' - (4x^2)' + (5x)' - (9)' \quad  \\
+&= 3 \cdot 3x^{3-1} - 4 \cdot 2x^{2-1} + 5 \cdot 1x^{1-1} - 0 \quad \\
+&= 9x^2 - 8x + 5 \quad 
+\end{aligned}$
+> 
 > 
 > ==P86 例2==
-> 
+>>
+>>**设 $y = 2e^{x}(\sin x + 2\cos x)$，求 $y'$**
+>>
+>>$\begin{aligned}
+解：y' &= (2e^{x})'(\sin x + 2\cos x) + 2e^{x}(\sin x + 2\cos x)' \\
+&= 2e^{x}(\sin x + 2\cos x) + 2e^{x}(\cos x - 2\sin x) \\
+&= 2e^{x}\sin x + 4e^{x}\cos x + 2e^{x}\cos x - 4e^{x}\sin x \\
+&= 6e^{x}\cos x - 2e^{x}\sin x \\
+&= 2e^{x}(3\cos x - \sin x)
+\end{aligned}$
+>
 > ==P86 例3==
-> 
+>>**求函数 \( f(x) = x^3 + 3\sin x + \frac{5}{2} \) 的导数 \( f'(x) \) 及 \( f'\left(\frac{\pi}{4}\right) \)**
+>>
+>>$\begin{aligned}
+   解：f'(x) &= \left( x^3 + 3\sin x + \frac{5}{2} \right)' \\
+   &= (x^3)' + (3\sin x)' + \left( \frac{5}{2} \right)' \quad \\
+   &= 3x^2 + 3\cos x + 0 \quad \\
+   &= 3x^2 + 3\cos x.
+   \end{aligned}$
+>>
+>> $\begin{aligned}\ \ \ \ \ \ \ 
+   f'\left( \frac{\pi}{4} \right) &= 3\left( \frac{\pi}{4} \right)^2 + 3\cos\left( \frac{\pi}{4} \right) \\
+   &= 3 \cdot \frac{\pi^2}{16} + 3 \cdot \frac{\sqrt{2}}{2} \quad \\
+   &= \frac{3\pi^2}{16} + \frac{3\sqrt{2}}{2}.
+   \end{aligned}$
+>
+>
 > ==P86 例4==
-> 
+>>
+>>**设 $y = \tan x$，求 $y$ 的导数 $y'$**
+>>
+>>解：\( y' = (\tan x)' = \left( \frac{\sin x}{\cos x} \right)' = \frac{(\sin x)' \cos x - \sin x (\cos x)'}{\cos^2 x} \)
+>>
+>>\[= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x,\]
+>>
+>
+>>
 > ==P87 例5==
+>>
+>> **设 $y = \cot x $，求 $ y' $**
+>>
+>>解：$ y' = (\cot x)' = \left( \frac{\cos x}{\sin x} \right)' = \frac{(\cos x)' \sin x - \cos x (\sin x)'}{\sin^2 x} $
+\[= \frac{(-\sin x) \sin x - \cos x (\cos x)}{\sin^2 x} = \frac{-\sin^2 x - \cos^2 x}{\sin^2 x}\]
+
+\[= \frac{-(\sin^2 x + \cos^2 x)}{\sin^2 x} = \frac{-1}{\sin^2 x} = -\csc^2 x,\]
+
+即
+
+\[(\cot x)' = -\csc^2 x.\]
+>>
+
 
 ## 复合函数求导的链式法则
 > [!tip]
