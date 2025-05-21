@@ -19,7 +19,7 @@ vlook-query: ws=off
 - 常数项级数
 - 函数项级数
 
-## 常数项级数的概念和性质
+## 12.1 常数项级数的概念和性质
 
 > [!tip]
 >
@@ -41,7 +41,7 @@ $$
 
 > [!important]
 >
-> 定义: $\displaystyle a_n=\frac{1}{2^n}, ~ S_n=\sum_{i}^{\ n} a_n \quad n \rightarrow \infty$ ，称为$a_n$的无穷级数，简称级数。
+> **定义**: $\displaystyle a_n=\frac{1}{2^n}, ~ S_n=\sum_{i}^{\ n} a_n \quad n \rightarrow \infty$ ，称为$a_n$的无穷级数，简称级数。
 >
 >如果 $\left\{S_n\right\}$ 有极限， $\lim _{n \rightarrow \infty} S_n=S$ ，称级数收敛。
 
@@ -84,15 +84,15 @@ $q=-1 \quad$ 发散。
 
 >[!important](没有性质4？)
 >
->性质1：$\quad \sum u_n=s . \quad \sum k u_n=k s.$
+>**性质1**：$\quad \sum u_n=s . \quad \sum k u_n=k s.$
 >
->性质2：已知$\sum u_n=s, \sum U_n=δ,有
+>**性质2**：已知$\sum u_n=s, \sum U_n=δ,有
 \sum\left(u_n+v_n\right)=s+δ.
 $
 >
->性质3：改变级数有限项不影响收敛性.
+>**性质3**：改变级数有限项不影响收敛性.
 >
->性质 5 :
+>**性质5** :
 >$$级数收敛 \displaystyle \Longrightarrow \lim _{n \rightarrow \infty} a_n \Rightarrow 0.$$
 >
 > $$例\quad \frac{1}{2}-\frac{2}{3}+\frac{3}{4}-\cdots+(-1)^{n-1} \frac{n}{n+1}$$
@@ -110,14 +110,15 @@ $
 
 
 
-## 审敛法
+## 12.2 常数项级数的审敛法
 ### 1.正项级数
 
->定理1：正项级数 $\displaystyle \sum_{n=1}^{\infty} u_n$ 收敛的充要条件是 $S_n$ 有界。
+>**定理1**：
+>正项级数 $\displaystyle \sum_{n=1}^{\infty} u_n$ 收敛的充要条件是 $S_n$ 有界。
 >
 >单调有界有极限。
 
->定理2：$\sum u_n$ 和 $\sum v_n$ 都是正项级数，$u_n \leqslant v_n$
+>**定理2**：$\sum u_n$ 和 $\sum v_n$ 都是正项级数，$u_n \leqslant v_n$
 则 
 >
 >$$\sum  V_n收敛 \Rightarrow \sum  U_n收领$$
@@ -136,7 +137,7 @@ $\frac{1}{n+1}<\frac{1}{\sqrt{n(n+1)}}<\frac{1}{\sqrt{n n}}$
 
 >[!impartant]
 >
->定理3： $\lim _{n \rightarrow \infty} \frac{u_n}{v_n}=l$ ，$l>0$ ，则 $u_n \sim v_n$，即二者同收敛.
+>**定理3**： $\lim _{n \rightarrow \infty} \frac{u_n}{v_n}=l$ ，$l>0$ ，则 $u_n \sim v_n$，即二者同收敛.
 
 
 >[!tip]
@@ -149,7 +150,7 @@ $\frac{1}{n+1}<\frac{1}{\sqrt{n(n+1)}}<\frac{1}{\sqrt{n n}}$
 $$
 >[!impartant]
 >
->定理4．已知$\quad \lim _{n \rightarrow 0} \frac{u_{n+1}}{u_n}=ρ$
+>**定理4**：已知$\quad \lim _{n \rightarrow 0} \frac{u_{n+1}}{u_n}=ρ$
 >$$
 >\begin{array}{ll}
 >ρ<1 . & \text { 收敌. } \\
@@ -173,7 +174,7 @@ $$
 ### 2．交错级数
 >[!important]
 >
->定理7莱布尼茨定理：对$\sum_{n=1}^{\infty}(-1)^{n-1} u_n$
+>**定理7**（莱布尼茨定理）：对$\sum_{n=1}^{\infty}(-1)^{n-1} u_n$
 >
 >若 $ u_n \geqslant u_{n+1} . \quad \lim _{n \rightarrow \infty} u_n=0$,则级数收敛.
 
@@ -204,6 +205,217 @@ $$
 >$$
 因\sum\left|\frac{\sin \alpha}{n^2}\right| \leqslant \sum \frac{1}{n^2}, 故收敛
 $$
+
+## §12.3 幂级数
+
+>### 一、函数项级数
+>
+>* $u_n \rightarrow u_n(x)$
+>
+>* $S \rightarrow S(x)$ ← 和函数
+>
+>* $x \rightarrow x_0$
+>
+>  收敛点 / 发散点
+>
+> 收敛域 / 发散域
+
+>### 二、幂级数
+>
+>$$
+>\displaystyle \sum_{n=1}^{\infty} a_n x^n = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n + \cdots
+>$$
+>其中常数a_0,a_1,a_2,…,a_n,…叫做幂级数的系数.
+
+>**例1：**
+>
+>$$
+1 + x + x^2 + \cdots + x^n + \cdots = \frac{1 - x^n}{1 - x}
+>$$
+>
+>* $|x| < 1$：收敛
+>* $|x| > 1$：发散
+>* $x = 1$：发散
+>* $x = -1$：发散
+
+>**例2：**
+>
+>$$
+1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!} + \cdots = e^x
+>$$
+>
+>* $-\infty < x < \infty$：收敛
+
+---
+
+>**定理1**（阿贝尔(Abel)定理）   
+>如果级数$\displaystyle \sum_{n=1}^{\infty} a_n x^n$ 当$x=R(R\neq 0)$时收敛，那么
+>* 适合不等式
+ $|x| < R$ 的一切 x 使得幂级数绝对收敛。
+ >
+>反之，如果级数$\displaystyle \sum_{n=1}^{\infty} a_n x^n$ 当 $x=R(R\neq 0)$时发散，那么 
+>* 适合不等式 $|x| > R$的一切 x 使得幂级数发散。
+>
+>注意：$x = R, -R$：待定
+>
+
+>收敛半径：正数$R$
+>
+>收敛区域：开区间$(-R, R)$，$[-R, R]$, $(-R, R]$, $(-R, R)$ 
+
+>**定理2**：
+>
+>如果
+>$$
+\lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = \ell,
+>$$
+>其中a_n,a_{n+1}为幂级数相邻两项的系数，$\ell$为常数，则幂级数的收敛半径为
+>$$
+R = 
+\begin{cases}
+\frac{1}{\ell}, & \ell \ne 0 \\
+\infty, & \ell = 0 \\
+0, & \ell = +\infty.
+\end{cases}
+>$$
+>
+>计算：
+>$$
+\left| \frac{a_{n+1}x^{n+1}}{a_nx^n} \right| = |x|\ell < 1
+\Rightarrow |x| < \frac{1}{\ell}
+>$$
+
+---
+>[!tip]
+>
+>例1（P276）：
+>
+>$$
+x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^n \frac{x^n}{n} + \cdots
+>$$
+>
+>$$
+\ell = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = \lim_{n \to \infty} \frac{\frac{1}{n+1}}{\frac{1}{n}} = 1
+\Rightarrow R = 1
+>$$
+>
+>* $x = -1 \Rightarrow -1 + \frac{1}{2} - \cdots$：发散
+>* $x = 1 \Rightarrow 1 - \frac{1}{2} + \frac{1}{3} - \cdots$：收敛
+>
+>收敛区间：$(-1, 1]$
+
+
+>例2：
+>
+>$$
+1 + x + \frac{x}{2!}  + \cdots + \frac{1}{n!}x^n + \cdots
+>$$
+>
+>$$
+\ell = \lim_{n \to \infty} \frac{1}{n+1} = 0
+\Rightarrow R = \infty \Rightarrow (-\infty, \infty)
+>$$
+
+>**例3**
+>求幂级数 $\displaystyle\sum_{n=1}^\infty {n!}{x^n}$ 的收敛半径（规定 $0! = 1$）
+>
+>**解**：
+>$$
+\rho = \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right| = \lim_{n\to\infty} \frac{(n+1)!}{n!} = \lim_{n\to\infty} \frac{n+1}{1} =+\infty 
+>$$
+>故收敛半径 $R = 0$，级数在 $x=0$ 收敛。
+
+
+
+>**例5**
+>求幂级数 $\displaystyle\sum_{n=1}^\infty \frac{(x-1)^n}{2^n \cdot n}$ 的收敛域.
+>
+>**解**：
+> 令 $t = x - 1$，级数变为 $\displaystyle\sum_{n=1}^\infty \frac{t^n}{2^n n}$
+>
+> 因为
+   >$$
+   \rho = \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right| = \frac{2^n n }{2^{n+1}(n+1)} = \frac{1}{2}
+   >$$
+   >故收敛半径 $R = 2$.
+> 收敛区间为$ | t | <2$，即$ -1 < x < 3 $.
+   >- 当  $x = -1$,级数变为 $\displaystyle\sum_{n=1}^\infty \frac{(-1)^n}{n}$（收敛）
+   >- 当  $x = 3$）,级数变为 $\displaystyle\sum_{n=1}^\infty\frac{1}{n}$（发散）
+>因此原级数的收敛域是$[-1, 3)$
+
+
+## 12.4 幂级数展开
+>常用展开式：
+>1. 指数函数：
+   >$$ e^x = 1 + x + \frac{x^2}{2!} + \cdots+\frac{x^n}{n!}+\cdots \quad (-\infty < x < \infty) $$
+>2. 正弦函数：
+   >$$ \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots+(-1)^n \frac{x^{2n+1}}{(2n+1)!}+\cdots \quad (-\infty < x < \infty) $$
+>3. 几何级数：
+   >$$ \frac{1}{1+x} = \sum_{n=0}^\infty (-1)^n x^n \quad (-1 < x < 1) $$
+>4. 对数函数：
+   >$$ \ln(1+x) = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^n \quad (-1 < x \leq 1) $$
+>5. 余弦函数：
+>   >$$ \cos x = \sum_{n=1}^\infty \frac{(-1)^{n}}{2n!} x^(2n) \quad (-\infty < x < \infty) $$
+
+>## 幂级数展开例题
+
+>**例3**
+将函数 $f(x) = (1 - x) \ln(1 + x)$ 展开成 $x$ 的幂级数。
+>
+>**解**：
+>已知 $\ln(1+x)$ 的幂级数展开：
+>$$
+\ln(1+x) = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^n \quad (-1 < x \leq 1)
+>$$
+>
+>因此：
+>$$
+\begin{aligned}
+f(x) &= (1-x) \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^n \\
+&= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^n - \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^{n+1} \\
+&= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^n - \sum_{n=2}^\infty \frac{(-1)^{n}}{n-1} x^n \\
+&= x + \sum_{n=2}^\infty  \frac{(-1)^{n-1}(2n-1)}{n(n-1)}   x^n
+\end{aligned} \quad 
+$$ 
+
+>**例4**  将函数 $\sin x$ 展开成 $(x - \frac{\pi}{4})$ 的幂级数。
+>
+>**解**：
+>$$
+\sin x = \sin\left( \frac{\pi}{4} + \left(x - \frac{\pi}{4}\right) \right) 
+= \sin\frac{\pi}{4} \cos\left(x - \frac{\pi}{4}\right) + \cos\frac{\pi}{4} \sin\left(x - \frac{\pi}{4}\right)
+>$$
+
+---
+
+>**例5**
+>将函数 $f(x) = \frac{1}{x^2 + 4x + 3}$ 展开成 $(x-1)$ 的幂级数。
+>
+>**解**：
+>$$
+f(x) = \frac{1}{(x+1)(x+3)} = \frac{1}{2(1+x)} - \frac{1}{2(3+x)}
+>$$
+>
+>变形为 $(x-1)$ 形式：
+>$$
+\frac{1}{2(1+x)} = \frac{1}{4\left(1 + \frac{x-1}{2}\right)}, \quad \frac{1}{2(3+x)} = \frac{1}{8\left(1 + \frac{x-1}{4}\right)}
+>$$
+>
+> 利用几何级数展开：
+>$$
+\begin{aligned}
+\frac{1}{4\left(1 + \frac{x-1}{2}\right)} &= \frac{1}{4} \sum_{n=0}^\infty \frac{(-1)^n}{2^n} (x-1)^n \quad (-1 < x < 3) \\
+\frac{1}{8\left(1 + \frac{x-1}{4}\right)} &= \frac{1}{8} \sum_{n=0}^\infty \frac{(-1)^n}{4^n} (x-1)^n \quad (-3 < x < 5)
+\end{aligned}
+>$$
+>
+>所以
+>$$
+f(x) = \sum_{n=0}^\infty (-1)^n \left( \frac{1}{2^{n+2}} - \frac{1}{2^{2n+3}} \right) (x-1)^n \quad (-1 < x < 3)
+>$$
+
+
+
 
 
 [回到主页面](index.html)
