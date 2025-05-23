@@ -806,177 +806,194 @@ vlook-query: ws=off
 ## 极限的四则运算
 
 > [!caution]
-> 
+>
 > ---
 >
 > > **数列极限四则运算**
 > >
 > > > *`加减法`*: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n = A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 则 $\displaystyle \lim_{n\rightarrow \infty}[a_n \pm b_n]= A \pm B$.
-> > >  **证明**:  
->>> 对任意 \(\varepsilon > 0\)，存在 \(N_1\) 使当 \(n > N_1\) 时 \(|a_n - A| < \frac{\varepsilon}{2}\)，  
->>> 存在 \(N_2\) 使当 \(n > N_2\) 时 \(|b_n - B| < \frac{\varepsilon}{2}\)。  
->>> 取 \(N = \max\{N_1, N_2\}\)，则当 \(n > N\) 时：  
->>> \[
->>> |(a_n \pm b_n) - (A \pm B)| \leq |a_n - A| + |b_n - B| < \varepsilon.
->>> \]
-> > 
+> > > **证明**:  
+> > > 对任意 $\varepsilon > 0$，存在 $N_1$ 使当 $n > N_1$ 时 $|a_n - A| < \frac{\varepsilon}{2}$，  
+> > > 存在 $N_2$ 使当 $n > N_2$ 时 $|b_n - B|$ < $\frac{\varepsilon}{2}$。  
+> > > 取 
+> > >
+> > > $|(a_n \pm b_n)$ - $(A \pm B)$| $\leq |a_n - A|$ + $|b_n - B|$ < $\varepsilon$.
+> > > 
+> >
 > > > *`乘法`*: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n = A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 则 $\displaystyle \lim_{n\rightarrow \infty}a_nb_n = AB$.
 > > > **证明**:  
->>> 关键分解：\(|a_nb_n - AB| = |a_nb_n - Ab_n + Ab_n - AB| \leq |b_n||a_n - A| + |A||b_n - B|\)  
->>> 因\(\{b_n\}\)收敛，故存在\(M>0\)使\(|b_n|\leq M\)  
->>> 对\(\varepsilon>0\)，取\(N_1\)使当\(n>N_1\)时\(|a_n-A|<\frac{\varepsilon}{2M}\)  
->>> 取\(N_2\)使当\(n>N_2\)时\(|b_n-B|<\frac{\varepsilon}{2(|A|+1)}\)  
->>> 取\(N=\max\{N_1,N_2\}\)，则当\(n>N\)时：  
->>> \[
->>> |a_nb_n - AB| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
->>> \]
-> > 
+> > > 关键分解：\|$a_nb_n - AB$|$ = $|$a_nb_n - Ab_n + Ab_n - AB|$ $\leq $|$b_n||a_n - A| + |A||b_n - B$|  
+> > > 因\{$b_n\}$收敛，故存在M>0使|$b_n|\leq M$  
+> > > 对$\varepsilon > 0$，取$N_1$使当$n>N_1$时$|a_n-A|<\frac{\varepsilon}{2M}$  
+> > > 取$N_2$使当$n>N_2$时$|b_n-B|<\frac{\varepsilon}{2|A|+1}$  
+> > > 取$N=\max\{N_1,N_2\}$，则当$n>N$时：  
+> > > $|a_nb_n - AB| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$
+> >
 > > > *`除法`*: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n= A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 且 $B \ne 0$, 则 $\displaystyle \lim_{n\rightarrow \infty}\frac{a_n}{b_n}= \frac{A}{B}$.
 > > > **证明**:  
->>> 先证\(\lim_{n \to \infty} \frac{1}{b_n} = \frac{1}{B}\)  
->>> 存在\(N_1\)使当\(n>N_1\)时\(|b_n|>\frac{|B|}{2}\)  
->>> 对\(\varepsilon>0\)，取\(N_2\)使当\(n>N_2\)时\(|b_n-B|<\frac{\varepsilon B^2}{2}\)  
->>> 则当\(n>\max\{N_1,N_2\}\)时：  
->>> \[
->>> \left|\frac{1}{b_n} - \frac{1}{B}\right| = \frac{|b_n - B|}{|b_nB|} < \frac{2}{|B|^2} \cdot \frac{\varepsilon B^2}{2} = \varepsilon
->>> \]  
->>> 再结合乘法法则即得结论。
+> > > 先证$\varepsilon > 0，取$$N_2$使当$n>N_2$时$|b_n-B|<\frac{\varepsilon B^2}{2}$  
+> > > 则当$n>\max\{N_1,N_2\}$时：  
+> > > $\left|\frac{1}{b_n} - \frac{1}{B}\right| = \frac{|b_n - B|}{|b_nB|} < \frac{2}{|B|^2} \cdot \frac{\varepsilon B^2}{2} = \varepsilon$ 
+> > > 再结合乘法法则即得结论。
 
 > >
-> 
+>
 > > **函数极限四则运算**
 > >
 > > > *`加减法`*: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 则 $\displaystyle \lim_{x\rightarrow x_0}[f(x) \pm g(x)]= A \pm B$.
-> > >  **证明**：
->>> 1. 对任意 \(\varepsilon > 0\)，由 \(\lim_{x \to x_0} f(x) = A\)，存在 \(\delta_1 > 0\)，  
->>> 使得当 \(0 < |x - x_0| < \delta_1\) 时，\(|f(x) - A| < \frac{\varepsilon}{2}\)  
->>> 2. 由 \(\lim_{x \to x_0} g(x) = B\)，存在 \(\delta_2 > 0\)，  
->>> 使得当 \(0 < |x - x_0| < \delta_2\) 时，\(|g(x) - B| < \frac{\varepsilon}{2}\)  
->>> 3. 取 \(\delta = \min\{\delta_1, \delta_2\}\)，则当 \(0 < |x - x_0| < \delta\) 时：  
->>> \[
->>> |[f(x) \pm g(x)] - [A \pm B]| \leq |f(x) - A| + |g(x) - B| < \varepsilon
->>> \]
+> > > **证明**：
+> > >
+> > > 对任意$\varepsilon > 0$，由 $lim_{x \to x_0} f(x) = A$，存在 $\delta_1$ > 0，  
+> > > 使得当 $0 < |x - x_0| < \delta_1$ 时，$|f(x) - A| < \frac{\varepsilon}{2}$  
+> > >
+> > > 由 $\lim_{x \to x_0} g(x) = B$，存在 $\delta_2 > 0$，  
+> > > 使得当 $0 < |x - x_0| < \delta_2$ 时，$|g(x) - B| < \frac{\varepsilon}{2}$  
+> > >
+> > > 取 $\delta = \min\{\delta_1, \delta_2\}$，则当 $0 < |x - x_0| < \delta$ 时：  
+> > > $
+> > > |[f(x) \pm g(x)] - [A \pm B]| \leq |f(x) - A| + |g(x) - B| < \varepsilon
+> > > $
 
-> > 
+> >
 > > > *`乘法`*: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 则 $\displaystyle \lim_{x\rightarrow x_0}f(x)g(x)= AB$.
-> > >  **证明**：
->>> 1. 对任意 \(\varepsilon > 0\)，由 \(\lim_{x \to x_0} f(x) = A\)，存在 \(\delta_1 > 0\)，  
->>> 使得当 \(0 < |x - x_0| < \delta_1\) 时，\(|f(x) - A| < \frac{\varepsilon}{2}\)  
->>> 2. 由 \(\lim_{x \to x_0} g(x) = B\)，存在 \(\delta_2 > 0\)，  
->>> 使得当 \(0 < |x - x_0| < \delta_2\) 时，\(|g(x) - B| < \frac{\varepsilon}{2}\)  
->>> 3. 取 \(\delta = \min\{\delta_1, \delta_2\}\)，则当 \(0 < |x - x_0| < \delta\) 时：  
->>> \[
->>> |[f(x) \pm g(x)] - [A \pm B]| \leq |f(x) - A| + |g(x) - B| < \varepsilon
->>> \]
+> > > **证明**：
+> > >
+> > > 对任意$\varepsilon > 0$，由 $\lim_{x \to x_0} f(x) = A$，存在 $\delta_1 > 0$，  
+> > > 使得当 $0 < |x - x_0| < \delta_1$ 时，$|f(x) - A| < \frac{\varepsilon}{2}$  
+> > >
+> > > 由 $\lim_{x \to x_0} g(x) = B，存在 \delta_2 > 0$，  
+> > > 使得当 $0 < |x - x_0| < \delta_2$时，$|g(x) - B| < \frac{\varepsilon}{2}$  
+> > >
+> > > 取 $\delta = \min\{\delta_1, \delta_2\}，则当 0 < |x - x_0| < \delta$ 时：  
+> > > $|[f(x) \pm g(x)] - [A \pm B]| \leq |f(x) - A| + |g(x) - B| < \varepsilon
+> > > $
 
-> > 
+> >
 > > > *`除法`*: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 且 $B \ne 0$, 则 $\displaystyle \lim_{x\rightarrow x_0}\frac{f(x)}{g(x)}= \frac{A}{B}$.
-> > > 
->>> **证明**：
->>> 1. 先证 \(\lim_{x \to x_0} \frac{1}{g(x)} = \frac{1}{B}\)：  
->>> - 由 \(\lim_{x \to x_0} g(x) = B \neq 0\)，存在 \(\delta_1 > 0\) 使当 \(0 < |x - x_0| < \delta_1\) 时，\(|g(x)| > \frac{|B|}{2}\)  
->>> - 对任意 \(\varepsilon > 0\)，取 \(\delta_2 > 0\) 使当 \(0 < |x - x_0| < \delta_2\) 时：  
->>> \[
->>> |g(x) - B| < \frac{\varepsilon B^2}{2}
->>> \]  
->>> - 取 \(\delta = \min\{\delta_1, \delta_2\}\)，则当 \(0 < |x - x_0| < \delta\) 时：  
->>> \[
->>> \left| \frac{1}{g(x)} - \frac{1}{B} \right| = \frac{|g(x) - B|}{|g(x)B|} < \frac{2}{|B|^2} \cdot \frac{\varepsilon B^2}{2} = \varepsilon
->>> \]
->>> 2. 再结合乘法法则即得：  
->>> \[
->>> \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \left( f(x) \cdot \frac{1}{g(x)} \right) = A \cdot \frac{1}{B} = \frac{A}{B}
->>> \]
-> > 
+> > >
+> > > **证明**：
+> > >
+> > > 先证 $\lim_{x \to x_0} \frac{1}{g(x)} = \frac{1}{B}$：  
+> > >
+> > > 由 $\lim_{x \to x_0} g(x) = B \neq 0，存在 \delta_1 > 0使当 0 < |x - x_0| < \delta_1时，|g(x)| > \frac{|B|}{2}$  
+> > >
+> > > - 对任意$\varepsilon > 0$，取 $\delta_2 > 0 使当 0 < |x - x_0| < \delta_2$ 时：  
+> > >   $
+> > >   |g(x) - B| < \frac{\varepsilon B^2}{2}
+> > >   $ 
+> > > - 取 $\delta = \min\{\delta_1, \delta_2\}$，则当 $0 < |x - x_0| < \delta$ 时：  
+> > >   $
+> > >   \left| \frac{1}{g(x)} - \frac{1}{B} \right| = \frac{|g(x) - B|}{|g(x)B|} < \frac{2}{|B|^2} \cdot \frac{\varepsilon B^2}{2} = \varepsilon
+> > >   $
+> > >
+> > > 2. 再结合乘法法则即得：  
+> > > $
+> > > \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \left( f(x) \cdot \frac{1}{g(x)} \right) = A \cdot \frac{1}{B} = \frac{A}{B}
+> > > $
+> >
 
 > [!note]
-> 
+>
 > ==极限四则运算的例子==
-> 
+>
 > ---
-> 
+>
 > > **例1**
-> > 
+> >
 > > 证明 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$
-> > 
+> >
 > > **证明**：  
->>> 1. 对任意给定的 $\varepsilon > 0$，我们需要找到正整数 $N$，使得当 $n > N$ 时：  
->>> \[
->>> \left| \frac{1}{n} - 0 \right| = \frac{1}{n} < \varepsilon
->>> \]  
->>> 2. 解不等式 $\frac{1}{n} < \varepsilon$ 得 $n > \frac{1}{\varepsilon}$  
->>> 3. 取 $N = \left\lfloor \frac{1}{\varepsilon} \right\rfloor + 1$（即不小于 $\frac{1}{\varepsilon}$ 的最小整数）  
->>> 4. 则当 $n > N$ 时，必有 $\frac{1}{n} < \varepsilon$  
->>> 5. 由极限定义，$\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$ 得证  
->>> **几何解释**：  
->>> 当 $n$ 趋近无穷大时，$\frac{1}{n}$ 无限接近于 $0$，如图像 $y=\frac{1}{x}$ 在 $x\to\infty$ 时的渐近线为 $y=0$。
-> > 
+> >
+> > > 对任意给定的 $\varepsilon > 0$，我们需要找到正整数 $N$，使得当 $n > N$ 时：  
+> > > $
+> > > \left| \frac{1}{n} - 0 \right| = \frac{1}{n} < \varepsilon
+> > > $ 
+> > >
+> > > 解不等式 $\frac{1}{n} < \varepsilon$ 得 $n > \frac{1}{\varepsilon}$  
+> > >
+> > > 取 $N = \left\lfloor \frac{1}{\varepsilon} \right\rfloor + 1$（即不小于 $\frac{1}{\varepsilon}$ 的最小整数）  
+> > >
+> > > 则当 $n > N$ 时，必有 $\frac{1}{n} < \varepsilon$  
+> > >
+> > > 由极限定义，$\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$ 得证  
+> > > **几何解释**：  
+> > > 当 $n$ 趋近无穷大时，$\frac{1}{n}$ 无限接近于 $0$，如图像 $y=\frac{1}{x}$ 在 $x\to\infty$ 时的渐近线为 $y=0$。
+> >
 >
 > > **例2**
-> > 
+> >
 > > 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{2n}$
->>>**解法1（直接法）**：  
->>> 由 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$ 可得：  
->>> \[
->>> \lim_{n\rightarrow \infty}\frac{1}{2n} = \frac{1}{2} \cdot \lim_{n\rightarrow \infty}\frac{1}{n} = \frac{1}{2} \times 0 = 0
->>> \]
->>> **解法2（$\varepsilon-N$ 定义证明）**：  
->>> 1. 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：  
->>> \[
->>> \left| \frac{1}{2n} - 0 \right| = \frac{1}{2n} < \varepsilon
->>> \]  
->>> 2. 解不等式得 $n > \frac{1}{2\varepsilon}$  
->>> 3. 取 $N = \left\lfloor \frac{1}{2\varepsilon} \right\rfloor + 1$  
->>> 4. 则当 $n > N$ 时必满足 $\frac{1}{2n} < \varepsilon$  
->>> 5. 故极限为 $0$
+> > >**解法1（直接法）**：  
+> > >由 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$ 可得：  
+> > >$
+> > >\lim_{n\rightarrow \infty}\frac{1}{2n} = \frac{1}{2} \cdot \lim_{n\rightarrow \infty}\frac{1}{n} = \frac{1}{2} \times 0 = 0
+> > >$
+> > >**解法2（$\varepsilon-N$ 定义证明）**：  
+> > >
+> > >对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：  
+> > >$\left| \frac{1}{2n} - 0 \right| = \frac{1}{2n} < \varepsilon
+> > >$ 
+> > >
+> > >解不等式得 $n > \frac{1}{2\varepsilon}$  
+> > >
+> > >取 $N = \left\lfloor \frac{1}{2\varepsilon} \right\rfloor + 1$  ，则当 $n > N$ 时必满足 $\frac{1}{2n} < \varepsilon$  ，故极限为 $0$
 
 >>> **几何解释**：  
 >>> 数列 $\frac{1}{2n}$ 的收敛速度是 $\frac{1}{n}$ 的一半，但最终都趋于 $0$。
 
 >>> **推广结论**：  
 >>> 对任意常数 $c \neq 0$，有：  
->>> \[
+>>> $
 >>> \lim_{n\rightarrow \infty}\frac{c}{n} = 0
->>> \]
+>>> $
 
 >>> [注] 两种解法分别展示了：  
 >>> （1）利用已知极限的性质  
 >>> （2）严格的 $\varepsilon-N$ 语言验证
 >
-> ---
-> 
-> > **例3**
-> > 
-> > 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n^2}$
-> > 
->>>**解法1（夹逼定理法）**：  
->>> 1. 注意到当 $n \geq 1$ 时：  
->>> \[
->>> 0 < \frac{1}{n^2} \leq \frac{1}{n}
->>> \]  
->>> 2. 已知 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n} = 0$  
->>> 3. 由夹逼定理可得：  
->>> \[
->>> \lim_{n\rightarrow \infty}\frac{1}{n^2} = 0
->>> \]
+>---
+>
+>> **例3**
+>>
+>> 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n^2}$
+>>
+>> >**解法1（夹逼定理法）**：  
+>> >
+>> >注意到当 $n \geq 1$ 时：  
+>> >$
+>> >0 < \frac{1}{n^2} \leq \frac{1}{n}
+>> >$ 
+>> >
+>> >已知 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n} = 0$  
+>> >
+>> >由夹逼定理可得：  
+>> >$
+>> >\lim_{n\rightarrow \infty}\frac{1}{n^2} = 0
+>> >$
 
 >>> **解法2（$\varepsilon-N$ 定义证明）**：  
->>> 1. 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：  
->>> \[
+>>>
+>>> 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：  
+>>> $
 >>> \left| \frac{1}{n^2} - 0 \right| = \frac{1}{n^2} < \varepsilon
->>> \]  
->>> 2. 解不等式得 $n > \frac{1}{\sqrt{\varepsilon}}$  
->>> 3. 取 $N = \left\lfloor \frac{1}{\sqrt{\varepsilon}} \right\rfloor + 1$  
->>> 4. 则当 $n > N$ 时必满足 $\frac{1}{n^2} < \varepsilon$  
->>> 5. 故极限为 $0$
+>>> $ 
+>>>
+>>> 解不等式得 $n > \frac{1}{\sqrt{\varepsilon}}$  
+>>>
+>>> 取 $N = \left\lfloor \frac{1}{\sqrt{\varepsilon}} \right\rfloor + 1$  
+>>>
+>>> 则当 $n > N$ 时必满足 $\frac{1}{n^2} < \varepsilon$  
+>>>
+>>> 故极限为 $0$
 >>> **几何解释**：  
 >>> 数列 $\frac{1}{n^2}$ 比 $\frac{1}{n}$ 收敛到 $0$ 的速度更快。
 >>> **推广结论**：  
 >>> 对任意 $k > 0$，有：  
->>> \[
+>>> $
 >>> \lim_{n\rightarrow \infty}\frac{1}{n^k} = 0
->>> \]
+>>> $
 >>> **比较分析**：  
+>>>
 >>> | 数列 | 收敛速度 | 所需 $N$（对固定 $\varepsilon$） |  
 >>> |------|----------|-----------------------------|  
 >>> | $\frac{1}{n}$ | 线性收敛 | $\sim \frac{1}{\varepsilon}$ |  
@@ -993,30 +1010,30 @@ vlook-query: ws=off
 > > 计算 $\displaystyle \lim_{x\rightarrow 1}(2x-1)$
 > > 
 > >  **解法1（直接代入法）**：  
+>>
 >>> 由于 $f(x) = 2x - 1$ 在 $x=1$ 处连续，可直接代入：  
->>> \[
->>> \lim_{x\rightarrow 1}(2x-1) = 2(1) - 1 = 1
->>> \]
+>>> $\lim_{x\rightarrow 1}(2x-1) = 2(1) - 1 = 1
+>>> $
 
 >>> **解法2（$\varepsilon-\delta$ 定义证明）**：  
->>> 1. 对任意 $\varepsilon > 0$，需找到 $\delta > 0$ 使得当 $0 < |x-1| < \delta$ 时：  
->>> \[
->>> |(2x-1) - 1| = 2|x-1| < \varepsilon
->>> \]  
->>> 2. 取 $\delta = \frac{\varepsilon}{2}$，则当 $0 < |x-1| < \delta$ 时：  
->>> \[
+>>>
+>>> 对任意 $\varepsilon > 0$，需找到 $\delta > 0$ 使得当 $0 < |x-1| < \delta$ 时：  
+>>> $
+>>> |(2x-1) - 1| = 2|x-1| < \varepsilon$ 
+>>>
+>>> 取 $\delta = \frac{\varepsilon}{2}$，则当 $0 < |x-1| < \delta$ 时：  
+>>> $
 >>> 2|x-1| < 2 \cdot \frac{\varepsilon}{2} = \varepsilon
->>> \]  
->>> 3. 故极限为 $1$
+>>> $ ，故极限为 $1$
 
 >>> **几何解释**：  
 >>> 函数 $y=2x-1$ 是斜率为 $2$ 的直线，在 $x=1$ 处函数值自然趋近于 $1$。
 
 >>> **推广结论**：  
 >>> 对任意多项式 $P(x)$ 和点 $a \in \mathbb{R}$，有：  
->>> \[
+>>> $
 >>> \lim_{x\rightarrow a}P(x) = P(a)
->>> \]
+>>> $
 
 >>> **注意事项**：  
 >>> 1. 直接代入法仅适用于连续函数  
@@ -1027,32 +1044,37 @@ vlook-query: ws=off
 >>> （1）连续函数的极限特性  
 >>> （2）如何构造 $\delta$ 与 $\varepsilon$ 的关系  
 >>> （3）线性函数极限的典型处理方法
-> 
-> ---
-> 
-> > **例5**
-> > 
-> > 计算 $\displaystyle \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3}$
-> > 
->>> **解法1（直接代入法）**：  
->>> 1. 分子在 $x=2$ 处的值：$2^3 - 1 = 7$  
->>> 2. 分母在 $x=2$ 处的值：$2^2 - 5(2) + 3 = -3$  
->>> 3. 因为分母不为零，可直接代入：  
->>> \[
->>> \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3} = \frac{7}{-3} = -\frac{7}{3}
->>> \]
+>
+>---
+>
+>> **例5**
+>>
+>> 计算 $\displaystyle \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3}$
+>>
+>> > **解法1（直接代入法）**：  
+>> >
+>> > 分子在 $x=2$ 处的值：$2^3 - 1 = 7$  
+>> >
+>> > 分母在 $x=2$ 处的值：$2^2 - 5(2) + 3 = -3$  
+>> >
+>> > 分母不为零，可直接代入：  
+>> > $
+>> > \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3} = \frac{7}{-3} = -\frac{7}{3}
+>> > $
 
 >>> **解法2（因式分解验证）**：  
->>> 1. 检查分子分母在 $x=2$ 时是否有公因式：  
->>>    - 分子：$x^3-1 = (x-1)(x^2+x+1)$  
->>>    - 分母：$x^2-5x+3$ 在 $x=2$ 处不为零  
->>> 2. 确认无零因子相消，直接代入有效
+>>>
+>>> 检查分子分母在 $x=2$ 时是否有公因式：  
+>>> - 分子：$x^3-1 = (x-1)(x^2+x+1)$  
+>>> - 分母：$x^2-5x+3$ 在 $x=2$ 处不为零  
+>>>
+>>> 确认无零因子相消，直接代入有效
 
 >>> **$\varepsilon-\delta$ 证明思路**：  
 >>> 对于任意 $\varepsilon > 0$，存在 $\delta > 0$ 使得当 $0 < |x-2| < \delta$ 时：  
->>> \[
+>>> $
 >>> \left| \frac{x^3-1}{x^2-5x+3} - \left(-\frac{7}{3}\right) \right| < \varepsilon
->>> \]  
+>>> $  
 >>> 可通过控制 $x$ 在 $2$ 附近的范围（如 $\delta < 0.5$）保证分母不为零，再构造不等式。
 
 >>> **几何意义**：  
@@ -1065,9 +1087,8 @@ vlook-query: ws=off
 
 >>> **推广结论**：  
 >>> 对于有理函数 $R(x) = \frac{P(x)}{Q(x)}$，若 $Q(a) \neq 0$，则：  
->>> \[
->>> \lim_{x\to a}R(x) = \frac{P(a)}{Q(a)}
->>> \]
+>>> $\lim_{x\to a}R(x) = \frac{P(a)}{Q(a)}
+>>> $
 
 >>> [注] 本例展示了有理函数极限的典型解法，强调必须先验证分母不为零的条件。
 > > 
@@ -1184,28 +1205,28 @@ vlook-query: ws=off
 >>     - \( \tan x \) 为切线长度
 >>2. **面积比较**：
    \[
-   \text{面积} \triangle OAP < \text{扇形面积} OAP < \text{面积} \triangle OAT
-   \]
-   即：
-   \[
-   \frac{1}{2} \sin x < \frac{1}{2} x < \frac{1}{2} \tan x
-   \]
+    \text{面积} \triangle OAP < \text{扇形面积} OAP < \text{面积} \triangle OAT
+    \]
+    即：
+    \[
+    \frac{1}{2} \sin x < \frac{1}{2} x < \frac{1}{2} \tan x
+    \]
 >>3. **化简不等式**：
    \[
-   \sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}
-   \]
-   取倒数得：
-   \[
-   \cos x < \frac{\sin x}{x} < 1
-   \]
+    \sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}
+    \]
+    取倒数得：
+    \[
+    \cos x < \frac{\sin x}{x} < 1
+    \]
 >>4. **应用夹逼定理**：
    \[
-   \lim_{x \to 0} \cos x = 1 \quad \text{且} \quad \lim_{x \to 0} 1 = 1
-   \]
-   故：
-   \[
-   \lim_{x \to 0} \frac{\sin x}{x} = 1
-   \]
+    \lim_{x \to 0} \cos x = 1 \quad \text{且} \quad \lim_{x \to 0} 1 = 1
+    \]
+    故：
+    \[
+    \lim_{x \to 0} \frac{\sin x}{x} = 1
+    \]
 >>##### 泰勒展开证明（补充）
 >>利用 \( \sin x \) 的泰勒展开：
 \[
@@ -1219,8 +1240,8 @@ vlook-query: ws=off
 >>1. 角度 \( x \) 必须使用弧度制
 >>2. 对于 \( x < 0 \) 的情况，利用奇函数性质：
    \[
-   \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
-   \]
+    \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
+    \]
 >>3. 该极限是推导三角函数导数的基础
 
 ### 重要极限二
@@ -1240,7 +1261,7 @@ vlook-query: ws=off
 >>> 通过研究极限：  
 >>> $$
 >>> \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n
->>> $$  
+>>> $$
 >>> 伯努利观察到：  
 >>> - 年复利 → 2.00美元  
 >>> - 半年复利 → 2.25美元  
@@ -1476,7 +1497,7 @@ vlook-query: ws=off
 > >
 > > $f(x)$ 在 $x=0$ 点处不连续. 造成不连续的原因跟*`例3`*一样也是 $f(0)$ 没有定义. 不幸的是,  $f(x)$ 在 $x=0$ 处无限震荡, 没有极限, 所以这个函数没法像*`例3`*一样简单的补上一个点就成为连续函数.
 > >
-> > [补充函数图像]
+> >![sinx_1_x](media/img/sinx_1_x.png) 
 >
 
 > [!caution]
@@ -1560,11 +1581,33 @@ vlook-query: ws=off
 >
 > > **例1: $\displaystyle f(x) = \frac{1}{x}$ **
 > >
-> > [待补充]
+> > - **不满足定理原因**  
+  维尔斯特拉斯极值定理要求函数在闭区间上连续。函数 \( f(x) = \frac{1}{x} \) 的定义域为 \( x \neq 0 \)，在包含0的任何闭区间（如 \([-1, 1]\)）上不连续，因为 \( x = 0 \) 是其间断点。
+> >- **体现效果**  
+> >  在闭区间 \([-1, 1]\) 上：
+> >  - 当 \( x \) 从正方向趋近于0时，\( f(x) \to +\infty \)；
+ > > - 当 \( x \) 从负方向趋近于0时，\( f(x) \to -\infty \)。  
+  因此，函数在该区间上既无最大值也无最小值，与定理结论矛盾。
 > 
 > > **例2: 符号函数**
 > >
-> > [待补充]
+> > - **函数定义**  
+  \[
+  \text{sgn}(x) = 
+  \begin{cases} 
+  1, & x > 0 \\ 
+  0, & x = 0 \\ 
+  -1, & x < 0 
+  \end{cases}
+  \]
+> >- **不满足定理原因**  
+  符号函数在 \( x = 0 \) 处不连续（左极限为 \(-1\)，右极限为 \(1\)，极限不存在），不满足定理中“闭区间上连续”的条件。
+
+> >- **体现效果**  
+  在闭区间 \([-1, 1]\) 上：
+> >  - 函数值只能取 \(-1, 0, 1\)；
+> >  - 虽然有上界1和下界 \(-1\)，但不存在严格的最大值点或最小值点（例如，\( x=0 \) 处的值0既非最大也非最小）。  
+> >  这与定理“存在最大值和最小值”的结论不符。
 > 
 
 > [!important]
@@ -1584,9 +1627,18 @@ vlook-query: ws=off
 >
 > ---
 >
-> > **[P68 例1] **
+> > **[P68 例1] **证明方程 \( x^3 - 4x^2 + 1 = 0 \) 在区间 \((0,1)\) 内至少有一个根
 > >
-> > [待补充]
+> > **证明**   
+> >   函数 \( f(x) = x^3 - 4x^2 + 1 \) 在闭区间 \([0,1]\) 上连续（多项式函数在其定义域内处处连续）。
+ > >  - \( f(0) = 0^3 - 4 \cdot 0^2 + 1 = 1 > 0 \)  
+ > >  - \( f(1) = 1^3 - 4 \cdot 1^2 + 1 = -2 < 0 \)  
+> >   由于 \( f(x) \) 在 \([0,1]\) 上连续，且 \( f(0) \cdot f(1) = -2 < 0 \)，根据**零点定理**，存在至少一点 \( \xi \in (0,1) \)，使得  
+ > >  \[ f(\xi) = 0,\] 即方程  
+   \[\xi^3 - 4\xi^2 + 1 = 0 \quad (0 < \xi < 1) \]成立。
+
+**结论**  
+方程 \( x^3 - 4x^2 + 1 = 0 \) 在区间 \((0,1)\) 内至少有一个根 \( \xi \)。
 >
 > > **[习题1-10: 1] **
 > >
