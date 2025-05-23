@@ -1018,33 +1018,27 @@ $\displaystyle \lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t 
 > > $\displaystyle \lim_{n\rightarrow \infty}\frac{\sqrt{n^2 + a^2}}{n}$ (习题1-2: 5(3))
 > > 
 > > - 方法一: 用定义证明.
-> > <br>解：当 $ a = 0 $ 时，所给数列为常数列，显然有此结论。以下设 $a ≠ 0$.
-由不等式变形：
-$$
-\begin{aligned}
-\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right|
-&= \frac{\sqrt{n^2 + a^2} - n}{n} \\
-&= \frac{a^2}{n(\sqrt{n^2 + a^2} + n)} \\
-&< \frac{a^2}{2n^2}
-\end{aligned}
-$$
-> > <br>要使 $\displaystyle \left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| < \varepsilon $，只需满足：$\displaystyle \frac{a^2}{2n^2} < \varepsilon \quad \Rightarrow \quad n > \frac{|a|}{\sqrt{2\varepsilon}}$.
-> > <br>取 $ \displaystyle \ N = \left\lceil \frac{|a|}{\sqrt{2\varepsilon}} \right\rceil $，则当 $ n > N $ 时，有：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^2 + a^2}}{n} = 1$
+> > 解：当 $ a = 0 $ 时，所给数列为常数列，显然有此结论.以下设 $a ≠ 0$.
+> >由不等式变形：
+> >$$\begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right|&= \frac{\sqrt{n^2 + a^2} - n}{n} \\&= \frac{a^2}{n(\sqrt{n^2 + a^2} + n)} \\&< \frac{a^2}{2n^2}\end{aligned}$$
+> > 要使 $\displaystyle \left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| < \varepsilon $，只需满足：$\displaystyle \frac{a^2}{2n^2} < \varepsilon \quad \Rightarrow \quad n > \frac{|a|}{\sqrt{2\varepsilon}}$.
+> > 取 $ \displaystyle \ N = \left\lceil \frac{|a|}{\sqrt{2\varepsilon}} \right\rceil $，则当 $ n > N $ 时，有：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^2 + a^2}}{n} = 1$
 > >
 > > - 方法二: 用极限运算和复合函数的极限证明.
-> > <br>解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
-> > <br>设两个基本函数：内层函数：$\displaystyle \ f(n) = 1 + \frac{a^{2}}{n^{2}}$ ，外层函数：$g(x) = \sqrt{x}$ 
-> >  <br>原极限可表示为复合函数：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\lim_{n \to \infty} \left(1 + \frac{a^{2}}{n^{2}}\right)}$
-> > <br>利用基本极限性质：$\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = 0$
+> > 解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
+> > 设两个基本函数：内层函数：$\displaystyle \ f(n) = 1 + \frac{a^{2}}{n^{2}}$ ，外层函数：$g(x) = \sqrt{x}$ 
+> > 原极限可表示为复合函数：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\lim_{n \to \infty} \left(1 + \frac{a^{2}}{n^{2}}\right)}$
+> > 利用基本极限性质：$\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = 0$
 因此：$\displaystyle\lim_{n \to \infty} f(n) = 1 + 0 = 1$
-> > <br>因外函数 $ g(x) = \sqrt{x} $ 在 $ x = 1 $ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
-> > <br>代入内部极限结果：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = g(1) = \sqrt{1} = 1$
+> > 因外函数 $ g(x) = \sqrt{x} $ 在 $ x = 1 $ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
+> > 代入内部极限结果：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = g(1) = \sqrt{1} = 1$
 > >
 > > - 方法三: 用极限运算证明
-> > <br>解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
-> > <br>应用根式的极限法则：根据极限的根式法则,若 $\displaystyle\lim_{n \to \infty} f(n)$ 存在且非负，则 $\displaystyle\lim_{n \to \infty} \sqrt{f(n)} = \sqrt{\lim_{n \to \infty} f(n)}$，将极限移入根号内：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = \sqrt{ \lim_{n \to \infty} \left( 1 + \frac{a^2}{n^2} \right) }$.
-> > <br>计算内部极限：常数项极限为$\displaystyle\lim_{n \to \infty} 1 = 1$.
-含$n$的项极限为$\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = a^2 \cdot 0 \cdot 0 = 0$.根据加法法则，极限为$\displaystyle\lim_{n \to \infty} \left( 1 + \frac{a^2}{n^2} \right) = 1 + 0 = 1$.
+> > 解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
+> > 应用根式的极限法则：根据极限的根式法则,若 $\displaystyle\lim_{n \to \infty} f(n)$ 存在且非负，则 $\displaystyle\lim_{n \to \infty} \sqrt{f(n)} = \sqrt{\lim_{n \to \infty} f(n)}$，将极限移入根号内：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = \sqrt{ \lim_{n \to \infty} \left( 1 + \frac{a^2}{n^2} \right) }$.
+> >计算内部极限：常数项极限为 $\displaystyle\lim_{n \to \infty} 1 = 1$.
+> >含$n$的项极限为 $\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = a^2 \cdot 0 \cdot 0 = 0$.
+> >根据加法法则，极限为 $\displaystyle\lim_{n \to \infty} \left( 1 + \frac{a^2}{n^2} \right) = 1 + 0 = 1$.
 
 # 连续函数
 
