@@ -14,11 +14,11 @@ vlook-query: ws=off
 [回到主页面](index.html)
 
 
-# 多元函数的积分
+# 曲线积分和曲面积分
 
 > [!TIP]
 >
-> 多元函数的积分体系（如二重积分、三重积分、曲线与曲面积分）建立在三大分析学基础之上：**微分**用于刻画向量场的局部性质（如梯度、散度、旋度），**积分**将局部信息通过区域叠加扩展为全局量（如质量、通量、环流量），而**极限**则贯穿于积分定义与收敛性分析中。
+> 本章我们将综合运用之前所学的多元函数微分和积分工具来解决来源于物理中的核心问题, 如做功和通量等物理量的数学定义和计算, 并揭示曲线和曲面积分之间的重要而深刻的联系. 
 >
 
 ### 场(field)
@@ -111,44 +111,45 @@ x = a \cos t、y = a \sin t、z = kt$
 > \end{aligned}
 > $$
 > 其中，$\mathrm{d}\vec{r}=(\mathrm{d}x,\mathrm{d}y)^T,\Delta\vec{r}=(\Delta x,\Delta y)^T$,从而
->$$
->\begin{aligned}
-W&= \sum_{i} \left( P \Delta x_i + Q \Delta y_i \right) \\
-&= \int_{L} P(x,y) \, \mathrm{d}x + Q(x,y) \, \mathrm{d}y.
-\end{aligned}
->$$
+> $$
+> \begin{aligned}
+> W&= \sum_{i} \left( P \Delta x_i + Q \Delta y_i \right) \\
+> &= \int_{L} P(x,y) \, \mathrm{d}x + Q(x,y) \, \mathrm{d}y.
+> \end{aligned}
+> $$
 > 若曲线 $ L $ 由参数方程 $ x = x(t) $, $ y = y(t) $ 描述，且$x(t),y(t)$在$[t_1,t_2]$上具有一阶连续导数，$x'^2(t)+y'^2(t)\neq 0$  ，则
 > $$
-\Delta \vec{r}_i = \left[ x'(t)\hat{i} + y'(t)\hat{j} \right] \mathrm{d}t.
+> \Delta \vec{r}_i = \left[ x'(t)\hat{i} + y'(t)\hat{j} \right] \mathrm{d}t.
 > $$
 > 且
 > $$
-\begin{aligned}
-W &= \int_{t_1}^{t_2} \left[ P(x,y) x'(t) + Q(x,y) y'(t) \right] \mathrm{d}t \\
-&= \int_{t_1}^{t_2} \left[ P(x(t), y(t)) x'(t) + Q(x(t), y(t)) y'(t) \right] \mathrm{d}t.
-\end{aligned}
->$$
+> \begin{aligned}
+> W &= \int_{t_1}^{t_2} \left[ P(x,y) x'(t) + Q(x,y) y'(t) \right] \mathrm{d}t \\
+> &= \int_{t_1}^{t_2} \left[ P(x(t), y(t)) x'(t) + Q(x(t), y(t)) y'(t) \right] \mathrm{d}t.
+> \end{aligned}
+> $$
 > > **例1**
 > > 计算$$W = \int_{L} \vec{F} \cdot \mathrm{d}\vec{r}$$
 > > 其中，$F=-y\hat{i}+x\hat{j}$,$x=t,y=t^2$
+> >
 > > >**解**  
 > > > $$
-\begin{aligned}
-W &= \int_{L} \vec{F} \cdot \mathrm{d}\vec{r}\\
-&= \int_L-y\mathrm{d}x+x\mathrm{d}y\\
-&= \int_0^1-y\mathrm{d}t+x \cdot 2t\mathrm{d}t\\
-&= \int_0^1(-t^2+2t^2)\mathrm{d}t\\
-&= \frac{1}{3}
-\end{aligned}
+> > \begin{aligned}
+> > W &= \int_{L} \vec{F} \cdot \mathrm{d}\vec{r}\\
+> > &= \int_L-y\mathrm{d}x+x\mathrm{d}y\\
+> > &= \int_0^1-y\mathrm{d}t+x \cdot 2t\mathrm{d}t\\
+> > &= \int_0^1(-t^2+2t^2)\mathrm{d}t\\
+> > &= \frac{1}{3}
+> > \end{aligned}
 > > >$$
 > > > **Note**:
 > > > **(1)与曲线的参数化无关，积分只依赖于曲线$L$**
 > > > 若改为
 > > >$$
-\begin{cases}
-x=sin \theta  \\
-y=sin^2 \theta
-\end{cases},0\leq\theta\leq \frac{\pi}{2}
+> > \begin{cases}
+> > x=sin \theta  \\
+> > y=sin^2 \theta
+> > \end{cases},0\leq\theta\leq \frac{\pi}{2}
 > > >$$
 > > > 积分结果不变
 > > > **(2)依赖曲线$L$的方向**
@@ -159,55 +160,55 @@ y=sin^2 \theta
 > > >**解法一**  
 > > > 将所给积分转化为对$x$的定积分来计算：
 > > >$$
-\begin{aligned}
-\int_{L} xy\mathrm{d}x &= \int_{AO} xy\mathrm{d}x + \int_{OB} xy\mathrm{d}x \\
-&= \int_{1}^{0} x(-\sqrt{x})\mathrm{d}x + \int_{0}^{1} x\sqrt{x}\mathrm{d}x \\
-&= 2 \int_{0}^{1} x^{\frac{3}{2}}\mathrm{d}x\\
-&= \frac{4}{5}
-\end{aligned}
+> > \begin{aligned}
+> > \int_{L} xy\mathrm{d}x &= \int_{AO} xy\mathrm{d}x + \int_{OB} xy\mathrm{d}x \\
+> > &= \int_{1}^{0} x(-\sqrt{x})\mathrm{d}x + \int_{0}^{1} x\sqrt{x}\mathrm{d}x \\
+> > &= 2 \int_{0}^{1} x^{\frac{3}{2}}\mathrm{d}x\\
+> > &= \frac{4}{5}
+> > \end{aligned}
 > > >$$
 > > >**解法二**  
 > > >将所给积分化为对 $ y $ 的定积分来计算
 > > >$$
-\begin{aligned}
-\int_{L} xy\mathrm{d}x &= \int_{-1}^{1} y^2 y (y^2)'\mathrm{d}y \\
-&= 2 \int_{-1}^{1} y^4\mathrm{d}y \\
-&= 2 \left[ \frac{y^5}{5} \right]_{-1}^{1} \\
-&= \frac{4}{5}
-\end{aligned}
+> > \begin{aligned}
+> > \int_{L} xy\mathrm{d}x &= \int_{-1}^{1} y^2 y (y^2)'\mathrm{d}y \\
+> > &= 2 \int_{-1}^{1} y^4\mathrm{d}y \\
+> > &= 2 \left[ \frac{y^5}{5} \right]_{-1}^{1} \\
+> > &= \frac{4}{5}
+> > \end{aligned}
 > > >$$
 > >
 > > **例3**
-> >设一个质点在点 $ M(x,y) $ 处受到力 $ F $ 的作用，$ F $ 的大小与点 $ M $ 到原点 $ O $ 的距离成正比，$ F $ 的方向恒指向原点。此质点由点 $ A(a,0) $ 沿椭圆 $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $ 按逆时针方向移动到点 $ B(0,b) $，求力 $ F $ 所作的功 $ W $
+> > 设一个质点在点 $ M(x,y) $ 处受到力 $ F $ 的作用，$ F $ 的大小与点 $ M $ 到原点 $ O $ 的距离成正比，$ F $ 的方向恒指向原点。此质点由点 $ A(a,0) $ 沿椭圆 $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $ 按逆时针方向移动到点 $ B(0,b) $，求力 $ F $ 所作的功 $ W $
 > > > 图
 > > >由题意，力的表达式为：  
 > > >$$
-\overrightarrow{F} = -k(x\mathbf{i} + y\mathbf{j}),
+> > \overrightarrow{F} = -k(x\mathbf{i} + y\mathbf{j}),
 > > >$$
 > > >其中 $ k > 0 $ 为比例常数。功的表达式为：  
 > > >$$
-W = \int_{AB} \overrightarrow{F} \cdot \mathrm{d}\mathbf{r} = -k \int_{AB} (x\mathrm{d}x + y\mathrm{d}y).
+> > W = \int_{AB} \overrightarrow{F} \cdot \mathrm{d}\mathbf{r} = -k \int_{AB} (x\mathrm{d}x + y\mathrm{d}y).
 > > >$$
 > > >利用椭圆的参数方程：  
 > > >$$
-\begin{cases}
-x = a \cos \theta, \\
-y = b \sin \theta,
-\end{cases} \quad \theta \in \left[0, \frac{\pi}{2}\right],
+> > \begin{cases}
+> > x = a \cos \theta, \\
+> > y = b \sin \theta,
+> > \end{cases} \quad \theta \in \left[0, \frac{\pi}{2}\right],
 > > >$$
 > > >计算微分：  
 > > >$$
-dx = -a \sin \theta\mathrm{d}\theta, \quad dy = b \cos \theta\mathrm{d}\theta.
+> > dx = -a \sin \theta\mathrm{d}\theta, \quad dy = b \cos \theta\mathrm{d}\theta.
 > > >$$
-代入积分式：  
+> > 代入积分式：  
 > > >$$
-\begin{aligned}
-W &= -k \int_{0}^{\frac{\pi}{2}} \left[ a \cos \theta (-a \sin \theta) + b \sin \theta (b \cos \theta) \right] \mathrm{d}\theta \\ 
-&= k(a^2 - b^2) \int_{0}^{\frac{\pi}{2}} \sin \theta \cos \theta \mathrm{d}\theta \\
-&= \frac{1}{2} k(a^2 - b^2)\int_{0}^{\frac{\pi}{2}} \sin 2\theta \mathrm{d}\theta \\
-&= \frac{1}{2}k(a^2 - b^2) \left[ -\frac{\cos 2\theta}{2} \right]_{0}^{\frac{\pi}{2}}\\ 
-&= \frac{k}{2}(a^2 - b^2).
-\end{aligned}
+> > \begin{aligned}
+> > W &= -k \int_{0}^{\frac{\pi}{2}} \left[ a \cos \theta (-a \sin \theta) + b \sin \theta (b \cos \theta) \right] \mathrm{d}\theta \\ 
+> > &= k(a^2 - b^2) \int_{0}^{\frac{\pi}{2}} \sin \theta \cos \theta \mathrm{d}\theta \\
+> > &= \frac{1}{2} k(a^2 - b^2)\int_{0}^{\frac{\pi}{2}} \sin 2\theta \mathrm{d}\theta \\
+> > &= \frac{1}{2}k(a^2 - b^2) \left[ -\frac{\cos 2\theta}{2} \right]_{0}^{\frac{\pi}{2}}\\ 
+> > &= \frac{k}{2}(a^2 - b^2).
+> > \end{aligned}
 > > >$$
 
 ### 封闭曲线
@@ -215,10 +216,10 @@ W &= -k \int_{0}^{\frac{\pi}{2}} \left[ a \cos \theta (-a \sin \theta) + b \sin 
 > 图
 > $$
 \vec{F}(x,y)=y\hat{i}+x\hat{j}
->$$  
+>$$
 > $$
 \oint_{C}\vec{F} \cdot \mathrm{d}\vec{r}=\int_{C_1}\vec{F} \cdot \mathrm{d}\vec{r}+\int_{C_2}\vec{F} \cdot \mathrm{d}\vec{r}+\int_{C_3}\vec{F} \cdot \mathrm{d}\vec{r}
->$$  
+>$$
 > 其中，$$\int_{C_1}\vec{F} \cdot \mathrm{d}\vec{r}=0$$
 > 对于$C_2$,其参数方程为
 > $$
@@ -1145,7 +1146,7 @@ I = -\frac{4}{\sqrt{3}} \cdot \frac{3}{2} \iint_{\Sigma} \mathrm{d}S = -2\sqrt{3
 > > >故
 > > >$$
 I =  -\frac{9}{2}.
-> > >$$ 
+> > >$$
 
 #### 总结
 |$\iiint_Df(x,y,z)\mathrm{d}v$|$\iint_S\vec{F}\cdot \vec{n}\mathrm{d}S$|$\int_C\vec{F}\cdot \mathrm{d}\vec{r}$|
