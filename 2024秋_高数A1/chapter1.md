@@ -1408,33 +1408,63 @@ $
 > > **例1**
 > > 
 > > $\displaystyle \lim_{x\rightarrow 0}\frac{\tan(x)}{x}$ (P48: 例1)
+> > 
+> > 解：$\displaystyle \lim_{x \rightarrow 0} \frac{\tan (x)}{x}= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \cdot \frac{1}{\cos (x)} \right) = \left( \lim_{x \rightarrow 0} \frac{\sin (x)}{x} \right) \cdot \left( \lim_{x \rightarrow 0} \frac{1}{\cos (x)} \right)=1$.
 >
 > > **例2**
 > > 
 > > $\displaystyle \lim_{x\rightarrow 0}\frac{1-\cos(x)}{x^2}$ (P48: 例2)
+> >
+> > 解：$\displaystyle \lim_{x \rightarrow 0} \frac{1 - \cos (x)}{x^{2}} = \lim_{x \rightarrow 0} \left( \frac{\sin^{2}(x)}{x^{2}} \cdot \frac{1}{1 + \cos (x)} \right)= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos (x)} = \frac{1}{2}$.
 >
 > ---
 >
 > > **例3**
 > >
 > > $\displaystyle \lim_{x\rightarrow 0}\frac{\arcsin(x)}{x}$ (P48: 例3)
+> >
+> >解：$t = \arcsin (x)$，则 $x = \sin t$，当 $x \to 0$ 时，有 $t \to 0$.  于是由复合函数的极限运算法则得：$\displaystyle \lim_{x \to 0} \frac{\arcsin (x)}{x} = \lim_{t \to 0} \frac{t}{\sin (t)} = 1$.
 >
 > > **例4**
 > > 
 > > $\displaystyle \lim_{x\rightarrow \infty}\left( 1-\frac{1}{x}\right)^{x}$ (P51: 例4)
+> >
+> >解：令 $t = -x$，则当 $x \to \infty$ 时，$t \to -\infty$.  于是
+$\displaystyle \lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \left( 1 + \frac{1}{t} \right)^{-t} = \lim_{t \to -\infty} \frac{1}{\left( 1 + \frac{1}{t} \right)^{t}} = \frac{1}{e}$.
 > ---
 >
 > > **例5**
 > > 
 > > $\displaystyle \lim_{x\rightarrow 0}\frac{\tan (2x)}{\sin (5x)}$ (P55: 例3)
+> >
+> >解：当 $ x \rightarrow 0 $ 时，$\tan (2)x \sim 2x$，$\sin (5x) \sim 5x$，所以  $\displaystyle \lim_{x \rightarrow 0} \frac{\tan (2x)}{\sin (5x)} = \lim_{x \rightarrow 0} \frac{2x}{5x} = \frac{2}{5}$.
 >
 > > **例6**
 > > 
 > > $\displaystyle \lim_{n\rightarrow \infty}\frac{\sqrt{n^2 + a^2}}{n}$ (习题1-2: 5(3))
 > > 
 > > - 方法一: 用定义证明.
+> > 解：当 $ a = 0 $ 时，所给数列为常数列，显然有此结论.以下设 $a ≠ 0$.
+> >由不等式变形：
+> >$$\begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right|&= \frac{\sqrt{n^2 + a^2} - n}{n} \\&= \frac{a^2}{n(\sqrt{n^2 + a^2} + n)} \\&< \frac{a^2}{2n^2}\end{aligned}$$
+> > 要使 $\displaystyle \left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| < \varepsilon $，只需满足：$\displaystyle \frac{a^2}{2n^2} < \varepsilon \quad \Rightarrow \quad n > \frac{|a|}{\sqrt{2\varepsilon}}$.
+> > 取 $ \displaystyle \ N = \left\lceil \frac{|a|}{\sqrt{2\varepsilon}} \right\rceil $，则当 $ n > N $ 时，有：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^2 + a^2}}{n} = 1$
+> >
 > > - 方法二: 用极限运算和复合函数的极限证明.
+> > 解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
+> > 设两个基本函数：内层函数：$\displaystyle \ f(n) = 1 + \frac{a^{2}}{n^{2}}$ ，外层函数：$g(x) = \sqrt{x}$ 
+> > 原极限可表示为复合函数：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\lim_{n \to \infty} \left(1 + \frac{a^{2}}{n^{2}}\right)}$
+> > 利用基本极限性质：$\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = 0$
+因此：$\displaystyle\lim_{n \to \infty} f(n) = 1 + 0 = 1$
+> > 因外函数 $ g(x) = \sqrt{x} $ 在 $ x = 1 $ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
+> > 代入内部极限结果：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = g(1) = \sqrt{1} = 1$
+> >
 > > - 方法三: 用极限运算证明
+> > 解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
+> > 应用根式的极限法则：根据极限的根式法则,若 $\displaystyle\lim_{n \to \infty} f(n)$ 存在且非负，则 $\displaystyle\lim_{n \to \infty} \sqrt{f(n)} = \sqrt{\lim_{n \to \infty} f(n)}$，将极限移入根号内：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = \sqrt{ \lim_{n \to \infty} \left( 1 + \frac{a^2}{n^2} \right) }$.
+> >计算内部极限：常数项极限为 $\displaystyle\lim_{n \to \infty} 1 = 1$.
+> >含$n$的项极限为 $\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = a^2 \cdot 0 \cdot 0 = 0$.
+> >根据加法法则，极限为 $\displaystyle\lim_{n \to \infty} \left( 1 + \frac{a^2}{n^2} \right) = 1 + 0 = 1$.
 
 # 连续函数
 
@@ -1471,13 +1501,13 @@ $
 > > 
 > >  $f(x)$ 在 $(-\infty, +\infty)$ 上连续.
 > > 
-> > ![](media/img/123x.jpg)
+> > ![](media/img/chap1_5.1.1.png)
 > 
 > > **例2: $\displaystyle f(x) = \frac{1}{|x|}$**
 > > 
 > >  $f(x)$ 在 $(-\infty,0)\bigcup (0, +\infty)$ 上连续, 但是在 0 点处不连续.
 > > 
-> >![](../../1d1cf0e1c2a300f25af267b98234b0a.png)
+> >![](media/img/chap1_5.1.2.png)
 > 
 
 > [!caution]
@@ -1501,7 +1531,7 @@ $
 > >
 > > $f(x)$ 在 $x=0$ 点处不连续. 造成不连续的原因跟*`例3`*一样也是 $f(0)$ 没有定义. 不幸的是,  $f(x)$ 在 $x=0$ 处无限震荡, 没有极限, 所以这个函数没法像*`例3`*一样简单的补上一个点就成为连续函数.
 > >
-> > ![sinx_1_x](media/img/sinx_1_x.png) 
+> > ![](media/img/chap1_5.1.3.png)
 >
 
 > [!caution]
@@ -1585,32 +1615,18 @@ $
 >
 > > **例1: $\displaystyle f(x) = \frac{1}{x}$ **
 > >
-> > > > - **不满足定理原因**  
-> >   维尔斯特拉斯极值定理要求函数在闭区间上连续。函数 $f(x) = \frac{1}{x} $ 的定义域为 $x \neq 0 $，在包含0的任何闭区间（如 $[-1, 1]$）上不连续，因为 \( x = 0 \) 是其间断点。
-> > > >- **体现效果**  
-> > > >  在闭区间 $[-1, 1]$ 上：
-> > > >  - 当$x$从正方向趋近于0时，$ f(x) \to +\infty $；
-> >  > > - 当$x$从负方向趋近于0时，$f(x) \to -\infty $。  
-> >   因此，函数在该区间上既无最大值也无最小值，与定理结论矛盾。
->
+> > 在闭区间$[-1,1]$上, $f(x)$ 在 $x=0$ 处不连续, 因为 $f(0)$ 没有定义. 因此, $f(x)$ 在 $[-1,1]$ 上的连续性是不成立的. 违反维尔斯特拉斯极值定理，$f(x)$ 在闭区间$[-1,1]$上无界，当$x \to 0$ 时，$\displaystyle \lim_{x \to 0} |f(x)| \to +\infty$,不存在最大值和最小值.
+
+> 
 > > **例2: 符号函数**
 > >
-> > - **函数定义**  
-> >   $\text{sgn}(x) = 
-> >   \begin{cases} 
-> >   1, & x > 0 \\ 
-> >   0, & x = 0 \\ 
-> >   -1, & x < 0 
-> >   \end{cases}$
-> > > >- **不满足定理原因**  
-> >   符号函数在 \( x = 0 \) 处不连续（左极限为 $-1$，右极限为 $1$，极限不存在），不满足定理中“闭区间上连续”的条件。
-> >
-> > > >- **体现效果**  
-> >   在闭区间 $[-1, 1]$ 上：
-> > > >  - 函数值只能取 $-1, 0, 1$；
-> > > >  - 虽然有上界$1$和下界 $-1$，但不存在严格的最大值点或最小值点（例如，$x=0$ 处的值0既非最大也非最小）。  
-> > > >  这与定理“存在最大值和最小值”的结论不符。
->
+> > $$\mathrm{sgn}(x) = \begin{cases}
+> > 1,  & \text{if $x>0$}, \\
+> > 0, & \text{if $x=0$}, \\
+> > -1, & \text{if $x<0$}.
+> > \end{cases}$$
+> >符号函数在闭区间$[-1, 1]$上不连续，因为在$x=0$处，符号函数的左右极限不相等。
+> 
 
 > [!important]
 > 
@@ -1629,23 +1645,14 @@ $
 >
 > ---
 >
-> > **[P68 例1] **
+> > **例1：证明方程 $x^{3} - 4x^{2} + 1 = 0$ 在区间 $(0,\,1)$ 内至少有一个根**
 > >
-> > **证明方程 $x^3 - 4x^2 + 1 = 0$在区间 $(0,1)$ 内至少有一个根
-> >
-> > > >**证明**   
-> > > > 函数 $ f(x) = x^3 - 4x^2 + 1 $在闭区间 $[0,1]$ 上连续（多项式函数在其定义域内处处连续）。
-> > > >   
-> >  > >  - $f(0) = 0^3 - 4 \cdot 0^2 + 1 = 1 > 0 $  
-> >  > >  - $ f(1) = 1^3 - 4 \cdot 1^2 + 1 = -2 < 0 $  
-> > > >     由于 $ f(x) $ 在 $[0,1]$ 上连续，且 $ f(0) \cdot f(1) = -2 < 0 $，根据**零点定理**，存在至少一点 $\xi \in (0,1) $，使得  
-> >  > >      $ f(\xi) = 0,$ 即方程  
-> >        $\xi^3 - 4\xi^2 + 1 = 0 \quad (0 < \xi < 1) $成立。
-> >
-> > **结论**  
-> > 方程 $ x^3 - 4x^2 + 1 = 0 $ 在区间 $(0,1)$ 内至少有一个根 $ \xi $。
+> > 证明：函数 $f ( x ) = x ^ { 3 } - 4 x ^ { 2 } + 1$ 在闭区间 $[0，1]$上连续，又$f ( 0 ) = 1 >0$，$f ( 1 ) = - 2< 0$.
+> > 根据介值定理，在 $(0，1)$内至少有一点 $ξ$，使得 $f ( η ) = 0$.
+即 $ ξ ^{3 }- 4 ξ ^{ 2 } + 1 = 0$ $\quad$ $(0<ξ<1)$.
+这等式说明方程 $x ^ { 3 } - 4 x ^ { 2 } + 1 = 0$ 在区间(0，1)内至少有一个根是 $ξ$． 
 >
-> > **[习题1-10: 1] **
+> > **习题1:  设函数$f ( x )$ 在闭区间 $[ a，b ]$ 上连续，且满足$a ≤ f ( x ) ≤ b$ 对所有$x \in [ a,b ]$ 成立. 证明：存在 $c \in [ a,b ]$，使得$f ( c ) = c$**
 > >
 > > 借助**介值定理**可以很容易证明上述定理, 其中的 $c$ 也称为函数 $f(x)$ 的不动点.
 >
