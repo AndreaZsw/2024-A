@@ -1,7 +1,7 @@
 ---
-title: 高等数学讲义(上)
+title: 高等数学讲义(下)
 author: 胡煜成
-description: 首都师范大学2024秋季学期高等数学A
+description: 首都师范大学2025春季学期高等数学A
 "og:description": 浏览器版和手机版
 "og:image": https://vlook-doc.pages.dev/pic/vlook-og.png
 keywords:
@@ -11,18 +11,14 @@ vlook-query: vdl=on
 vlook-query: ws=off
 ---
 
-> # [序言: 自主学习](intro.html)
+> # [第一章: 向量和空间解析几何](chapter1.html)
 >
-> # [第一章: 极限](chapter1.html)
+> # [第二章: 多元函数微分学](chapter2.html)
+> 
+> # [第三章: 多重积分](chapter3.html)
 >
-> # [第二章: 导数](chapter2.html)
+> # [第四章: 曲线和曲面积分](chapter4.html)
 > 
-> # [第三章: 微分](chapter3.html)
->
-> # [第四章: 积分I](chapter4.html)
-> 
-> # [第五章: 积分II](chapter5.html)
-> 
-> # [第六章: 微分方程](chapter6.html)
+> # [第五章: 无穷级数](chapter5.html)
 > 
 > _~Aq!~_
