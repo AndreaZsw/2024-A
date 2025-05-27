@@ -41,37 +41,35 @@ vlook-query: ws=off
 > > ==例2：割圆法与圆面积==
 > 
 
+
 > [!important]
->
-> **定义**: 考虑数列 $\displaystyle a_n$ 前 $n$ 项的和 $\displaystyle  S_n=\sum_{i}^{\ n} a_n$, 如果 $ \displaystyle \lim_{ n \rightarrow \infty}$ 存在，则称为 $a_n$的无穷级数，简称级数。
+> **定义**: $ \displaystyle a_n=\frac{1}{2^n}, ~ S_n=\sum_{i}^{\ n} a_n \quad n \rightarrow \infty$ ，称为$a_n$的无穷级数，简称级数。
 >
 >如果 $\left\{S_n\right\}$ 有极限， $\lim _{n \rightarrow \infty} S_n=S$ ，称级数收敛。
 
 >[!tip]
 >
-
-解：需要补充过程。
+>解：需要补充过程。
+>
 >P253 例1. 计算等比数列
 >$$
-S_n=\sum_{i=2}^{\ n} a q^i, a \neq 0
+>S_n=\sum_{i=2}^{\ n} a q^i, a \neq 0
 >$$
 >
 
 >$q \neq 1 \quad S_n=\frac{a}{1-q}-\frac{a q^n}{1-q}$
 >
->$|q|<1$ ,收敛
->
->$$
-q=1 \quad \text { 较流 }
->$$
->$|q|>1$ 。发散
-$q=-1 \quad$ 发散。
+>$|q|<1$ ,收敛.
+>$q=1  $,发散 .
+>$|q|>1$ , 发散.
+$q=-1 $ 发散.
 
 >p253．例2：$\displaystyle S_n=\sum_{i=1}^{\ n} i$, 发散
 
 >P253．例3：
 >$$
->\quad S_n=\frac{1}{1 \cdot 2}+\frac{1}{2 \cdot 3}+\cdots+\frac{1}{n(n+1)}$$
+>\quad S_n=\frac{1}{1 \cdot 2}+\frac{1}{2 \cdot 3}+\cdots+\frac{1}{n(n+1)}
+>$$
 >$$
 \begin{aligned}
 & =\frac{1}{1}-\frac{1}{2}+\frac{1}{2}-\frac{1}{3}+\cdots+\frac{1}{n}-\frac{1}{n+1} \\
@@ -84,35 +82,36 @@ $q=-1 \quad$ 发散。
 >
 >用别的办法（不计算）来判断收敛
 
->[!important](没有性质4？)
+> [!important] 
+> 
+> (没有性质4？)
 >
 >**性质1**：$\quad \sum u_n=s . \quad \sum k u_n=k s.$
 >
->**性质2**：已知$\sum u_n=s, \sum U_n=δ,有
+>**性质2**：$已知\sum u_n=s, \sum U_n=δ,有
 \sum\left(u_n+v_n\right)=s+δ.
 $
 >
 >**性质3**：改变级数有限项不影响收敛性.
 >
 >**性质5** :
->$$级数收敛 \displaystyle \Longrightarrow \lim _{n \rightarrow \infty} a_n \Rightarrow 0.$$
+>$$
+>级数收敛 \displaystyle \Longrightarrow \lim _{n \rightarrow \infty} a_n \Rightarrow 0.
+>$$
 >
-> $$例\quad \frac{1}{2}-\frac{2}{3}+\frac{3}{4}-\cdots+(-1)^{n-1} \frac{n}{n+1}$$
+> $$
+> 例\quad \frac{1}{2}-\frac{2}{3}+\frac{3}{4}-\cdots+(-1)^{n-1} \frac{n}{n+1}
+> $$
 >
->
->$$\lim _{n \rightarrow \infty} a_n=0 \nRightarrow \text { 级数收敛. } $$
+>$$
+>\lim _{n \rightarrow \infty} a_n=0 \nRightarrow \text { 级数收敛. }
+>$$
 >
 >$$
 >例\ \ 1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}
 >$$
 
-
-
-
-
-
-
-## 12.2 常数项级数的审敛法
+## §12.2 常数项级数的审敛法
 ### 1.正项级数
 
 >**定理1**：
@@ -123,10 +122,8 @@ $
 >**定理2**：$\sum u_n$ 和 $\sum v_n$ 都是正项级数，$u_n \leqslant v_n$
 则 
 >
->$$\sum  V_n收敛 \Rightarrow \sum  U_n收领$$
->$$
-\sum u_n \text { 发散 } \Rightarrow \sum v_n \text { 发散. }
->$$
+>$$\sum  V_n收敛 \Rightarrow \sum  U_n收敛$$
+>$$\sum u_n \text { 发散 } \Rightarrow \sum v_n \text { 发散. }$$
 
 
 注:与前 $N$ 项无关
@@ -136,11 +133,8 @@ $
 
 $\frac{1}{n+1}<\frac{1}{\sqrt{n(n+1)}}<\frac{1}{\sqrt{n n}}$
 
-
->[!impartant]
->
+> [!important]
 >**定理3**： $\lim _{n \rightarrow \infty} \frac{u_n}{v_n}=l$ ，$l>0$ ，则 $u_n \sim v_n$，即二者同收敛.
-
 
 >[!tip]
 >
@@ -149,73 +143,78 @@ $\frac{1}{n+1}<\frac{1}{\sqrt{n(n+1)}}<\frac{1}{\sqrt{n n}}$
 >解：
 >$$
 \lim \frac{\sin \frac{1}{n}}{\frac{1}{n}}=1 . \quad \sum \sin \frac{1}{n} 发散
-$$
->[!impartant]
+>$$
+
+>[!important]
 >
 >**定理4**：已知$\quad \lim _{n \rightarrow 0} \frac{u_{n+1}}{u_n}=ρ$
 >$$
->\begin{array}{ll}
->ρ<1 . & \text { 收敌. } \\
+>\begin{array}
+>ρ<1 . & \text { 收敛. } \\
 >ρ>1 . & \text { 发散. } \\
 >ρ=1 . & \text { 不确定.}
 >\end{array}
 >$$
 
->[!tips]
+>[!tip]
 例4．$P263 . \quad 1+\frac{1}{1}+\frac{1}{1· 2}+\frac{1}{1·2·3}+\cdots+\frac{1}{(n-1)!}+\dots$
->
 >$$
 \lim _{n \rightarrow \infty} \frac{u_{n+1}}{u_n}=\lim _{n \rightarrow \infty} \frac{(n-1)!}{n!}=\lim _{n \rightarrow \infty} \frac{1}{n}=0 \quad \text {, 收敛. }
-$$
+>$$
+>
 >例5．$\quad \frac{1}{10}+\frac{1·2}{10^2}+\frac{1·2·3}{10^3}+\cdots+\frac{n!}{10^n}$
 >$$
 \lim _{n \rightarrow \infty} \frac{u_{n+1}}{u_n}=\lim _{n \rightarrow \infty} \frac{(n+1)}{10}=\infty \text {, 发散. }
-$$
+>$$
+
+
 ### 2．交错级数
 >[!important]
 >
->**定理7**（莱布尼茨定理）：对$\sum_{n=1}^{\infty}(-1)^{n-1} u_n$
->
+>**定理7**（莱布尼茨定理）：对$\sum_{n=1}^{\infty}(-1)^{n-1} u_n$,
 >若 $ u_n \geqslant u_{n+1} . \quad \lim _{n \rightarrow \infty} u_n=0$,则级数收敛.
 
 >例:
->
->
 >$$
 \begin{aligned}
 & 1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots+(-1)^{n-1} \frac{1}{n}+\cdots \\
 & u_n=\frac{1}{n}, \quad u_n>u_{n+1} \quad \lim _{n+1} u_n=0
 \end{aligned}
-$$
+>$$
+
+
 ### 3. 绝收数与条件收敛
 >绝对收敛： $\displaystyle \sum_{n=1}^{\infty}\left|u_n\right|$ 收敛
 >
 >条件收敛：  $\displaystyle \sum_{n=1}^{\infty} u_n$ 收敛
->
+
 >$$
 \text { 绝对收敛 } \Rightarrow \text { 条件收敛 }
-$$
+>$$
+
 >[!tip]
 >
->p268．例9．$\quad \sum \frac{\sin n \alpha}{n^2}$
->
+>p268．例9.$\quad \sum \frac{\sin n \alpha}{n^2}$
 >解：
 >$$
 因\sum\left|\frac{\sin \alpha}{n^2}\right| \leqslant \sum \frac{1}{n^2}, 故收敛
-$$
+>$$
+
+
 ## §12.3 幂级数
 
 >### 一、函数项级数
 >
->* $u_n \rightarrow u_n(x)$
+> * $u_n \rightarrow u_n(x)$
 >
->* $S \rightarrow S(x)$ ← 和函数
+> * $S \rightarrow S(x)$ ← 和函数
 >
->* $x \rightarrow x_0$
+> * $x \rightarrow x_0$
 >
 >  收敛点 / 发散点
->
+>  
 > 收敛域 / 发散域
+
 
 >### 二、幂级数
 >
@@ -245,10 +244,10 @@ $$
 
 ---
 
->**定理1**（阿贝尔(Abel)定理）   
+>**定理1**（阿贝尔(Abel)定理）
 >如果级数$\displaystyle \sum_{n=1}^{\infty} a_n x^n$ 当$x=R(R\neq 0)$时收敛，那么
 >* 适合不等式
- $|x| < R$ 的一切 x 使得幂级数绝对收敛。
+ $|x| < R $ 的一切 x 使得幂级数绝对收敛。
  >
 >反之，如果级数$\displaystyle \sum_{n=1}^{\infty} a_n x^n$ 当 $x=R(R\neq 0)$时发散，那么 
 >* 适合不等式 $|x| > R$的一切 x 使得幂级数发散。
@@ -302,7 +301,7 @@ x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^n \frac{x^n}{n} + \cdots
 >收敛区间：$(-1, 1]$
 
 
->例2：
+>**例2**
 >
 >$$
 1 + x + \frac{x}{2!}  + \cdots + \frac{1}{n!}x^n + \cdots
@@ -322,8 +321,6 @@ x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^n \frac{x^n}{n} + \cdots
 >$$
 >故收敛半径 $R = 0$，级数在 $x=0$ 收敛。
 
-
-
 >**例5**
 >求幂级数 $\displaystyle\sum_{n=1}^\infty \frac{(x-1)^n}{2^n \cdot n}$ 的收敛域.
 >
@@ -341,7 +338,7 @@ x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^n \frac{x^n}{n} + \cdots
 >因此原级数的收敛域是$[-1, 3)$
 
 
-## 12.4 幂级数展开
+## §12.4 幂级数展开
 >常用展开式：
 >1. 指数函数：
    >$$ e^x = 1 + x + \frac{x^2}{2!} + \cdots+\frac{x^n}{n!}+\cdots \quad (-\infty < x < \infty) $$
@@ -373,7 +370,7 @@ f(x) &= (1-x) \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^n \\
 &= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^n - \sum_{n=2}^\infty \frac{(-1)^{n}}{n-1} x^n \\
 &= x + \sum_{n=2}^\infty  \frac{(-1)^{n-1}(2n-1)}{n(n-1)}   x^n
 \end{aligned} \quad 
-$$
+>$$
 >**例4**  将函数 $\sin x$ 展开成 $(x - \frac{\pi}{4})$ 的幂级数。
 >
 >**解**：
@@ -410,7 +407,7 @@ f(x) = \frac{1}{(x+1)(x+3)} = \frac{1}{2(1+x)} - \frac{1}{2(3+x)}
 f(x) = \sum_{n=0}^\infty (-1)^n \left( \frac{1}{2^{n+2}} - \frac{1}{2^{2n+3}} \right) (x-1)^n \quad (-1 < x < 3)
 >$$
 
-## 12.5 应用（后面讲）
+## §12.5 应用（后面讲）
 >一、近似计算
 
 
@@ -431,11 +428,11 @@ f(x) = \sum_{n=0}^\infty (-1)^n \left( \frac{1}{2^{n+2}} - \frac{1}{2^{2n+3}} \r
 >特例. $ e^{i}  = -1+ 0 $
 >   $$ e^{i\pi} + 1 = 0 \quad \text{（最美公式）} $$
 
-## 12.7 傅里叶级数（Fourier Series）
+## §12.7 傅里叶级数（Fourier Series）
 
 
 >多项式展开：
->$$ f(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n + \cdots >$$
+>$$ f(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n + \cdots$$
 >
 >离散点近似：
 >$$ f(x) \sim \begin{bmatrix} 
@@ -461,13 +458,15 @@ f(1)   = a_0 + a_1 \cdot 1 + a_2 \cdot 1^2 + a_3 \cdot 1^3 + a_4 \cdot 1^4
 >$$
 >
 >简写为矩阵形式：
->$$\begin{bmatrix} 
+>$$
+>\begin{bmatrix} 
 f(0) \\ 
 f(0.25) \\ 
 f(0.5) \\ 
 f(0.75) \\ 
 f(1) 
-\end{bmatrix}=a_0\begin{bmatrix} 
+\end{bmatrix}=a_0
+\begin{bmatrix} 
 1 \\ 
 1 \\ 
 1 \\ 
@@ -476,9 +475,9 @@ f(1)
 \end{bmatrix}    
 +a_1\begin{bmatrix} 
 0 \\ 
-0.25 \\ 
-0.5 \\ 
-0.75 \\
+\frac{1}{4} \\ 
+\frac{1}{2} \\ 
+\frac{3}{4} \\
 1 
 \end{bmatrix} 
 +a_2\begin{bmatrix} 
@@ -501,7 +500,7 @@ f(1)
 \left(\frac{1}{2}\right)^4 \\ 
 \left(\frac{3}{4}\right)^4 \\
 1 
-\end{bmatrix} 
+\end{bmatrix}
 >$$
 >
 >$$
@@ -521,11 +520,13 @@ a_4
 \end{bmatrix}
 >$$
 
->[!tips]
->1. $a_0,a_1,...,a_4$不好算.
->2.性质也不好.
+>[!tip]
+>
+> 1. $a_0,a_1,...,a_4$ 不好算
+> 2. 性质也不好.
 
->$$\begin{bmatrix}
+>$$
+>\begin{bmatrix}
 1 \\
 0 \\
 0 \\
@@ -561,12 +562,13 @@ a_4
 1
 \end{bmatrix}
 $$
->[!tips]
->1. ${a}$好算.
->2.不连续.
 
-> 傅里叶级数  
->**积分公式**：  
+> [!tip]
+> 1. ${a}$好算.
+> 2. 不连续.
+
+> 傅里叶级数 
+>**积分公式**： 
 >$$
 \int_0^1 \sin(2\pi x) \, dx = 0= \int_0^1 \cos(2\pi x) \, dx 
 >$$
@@ -580,21 +582,21 @@ $$
 \int_0^1 dx = 1, \quad \int_0^1 \sin^2(2\pi n x) \, dx =  \int_0^1 \frac{1- \cos((2\pi)2 n x) }{2}dx =\frac{1}{2}
 >$$
 
->**傅里叶级数展开式**：  
+>**傅里叶级数展开式**： 
 >$$
-f(x) = \frac{a_0 }{2}+ \sum_{k=1}^{\infty} \left[ a_k \cos(2\pi k x) + b_n \sin(2\pi k x) \right]
+f(x) = \frac{a_0 }{2}+ \sum_{k=1}^{\infty} \left[ a_k \cos(\frac{2\pi k x}{T}) + b_n \sin(\frac{2\pi k x}{T}) \right]
 >$$
 这块笔记有问题！！！
 >$$
-a_k = \int_0^1 f(x) \cos(2\pi k x) \, dx, \quad b_k = \int_0^1 f(x) \sin(2\pi k x) \, dx
+a_k = \frac{2}{T}\int_0^T f(x) \cos(\frac{2\pi k x}{T}) \, dx, \quad b_k =  \frac{2}{T}\int_0^T f(x) \sin(\frac{2\pi k x}{T}) \, dx
 >$$
->适用于周期函数（周期为 1）。
+>适用于周期函数（周期为 T）。
 
 ---
 
 ### 复数形式
 >
->**欧拉公式**：  
+>**欧拉公式**： 
 >$$
 e^{ix} = \cos x + i \sin x, \quad e^{-ix} = \cos x - i \sin x
 >$$
@@ -605,29 +607,27 @@ e^{ix} = \cos x + i \sin x, \quad e^{-ix} = \cos x - i \sin x
 
 
 
->周期为 $ 2l $。  
->  
->函数 $ f(x) $ 的展开式：  
->$$
-f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos(\frac{n\pi x}{l}) + b_n \sin(\frac{n\pi x}{l}) \right]
->$$
->**系数表达式**：  
->$$
-a_n =\frac{1}{l} \int_l^{-l} f(x) \cos(\frac{n\pi x}{l}) \, dx, \quad b_n = \frac{1}{l}\int_l^{-l} f(x) \sin(\frac{n\pi x}{l}) \, dx
->$$
->**复数形式结果**：  
->$$
-f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ \frac{a_n}{2}( e^{i\frac{n\pi x}{l}}+e^{-i\frac{n\pi x}{l}} ) - \frac{b_ni}{2} ( e^{i\frac{n\pi x}{l}}-e^{-i\frac{n\pi x}{l}} )  \right]$$
+>周期为 $ 2l $。 
 >
->$$  = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ \frac{a_n-b_ni}{2} e^{i\frac{n\pi x}{l}} + \frac{a_n+b_ni}{2} e^{-i\frac{n\pi x}{l}} \right]
-$$
-
-
-
-
-
-
-
+>函数 $ f(x) $ 的展开式： 
+>
+>$$
+>f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos(\frac{n\pi x}{l}) + b_n \sin(\frac{n\pi x}{l}) \right]
+>$$
+>
+>**系数表达式**： 
+>
+>$$
+>a_n =\frac{1}{l} \int_{-l}^{l} f(x) \cos(\frac{n\pi x}{l}) \, dx, \quad b_n = \frac{1}{l}\int_{-l}^{l} f(x) \sin(\frac{n\pi x}{l}) \, dx
+>$$
+>
+>**复数形式结果**： 
+>$$
+>\begin{aligned}
+>f(x) & = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ \frac{a_n}{2}(e^{i\frac{n\pi x}{l}}+e^{-i\frac{n\pi x}{l}} ) - \frac{b_ni}{2} (e^{i\frac{n\pi x}{l}}-e^{-i\frac{n\pi x}{l}} )  \right] \\
+>&= \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ \frac{a_n-b_ni}{2} e^{i\frac{n\pi x}{l}} + \frac{a_n+b_ni}{2} e^{-i\frac{n\pi x}{l}} \right]
+>\end{aligned}
+>$$
 
 
 [回到主页面](index.html)
